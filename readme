@@ -1,0 +1,64 @@
+Instalación de la app de Campus OpenData
+
+Requisitos de software:
+Necesitamos tener instalado postgresql
+sudo apt-get install postgresql
+
+Entramos como usuario postgre y creamos una base de  datos y un usuario para poder trabajar con ella
+----------------------------------------------------------------------------------------------------
+
+sudo -u postgres psql postgres
+
+
+CREATE user user_campusOpenData password 'C0ntr4$3n4_d3_c4mpU$0p3nD4t4';
+
+ALTER ROLE user_campusOpenData WITH SUPERUSER;
+
+CREATE DATABASE campusOpenDataDB WITH OWNER user_campusOpenData;
+
+GRANT ALL PRIVILEGES ON DATABASE campusOpenDataDB TO user_campusOpenData;
+
+Metemos los datos del dump.
+
+
+Creamos el directorio donde vayamos a instalar la aplicación
+
+mkdir campusOpenData
+
+Creamos el ambiente para la aplicacion
+virtualenv campusOpenData
+
+
+Instalamos Flask y sus necesidades. También psycopg2 para manejar la base de datos
+
+Si tenemos internet
+campusOpenData/bin/pip install Flask
+campusOpenData/bin/pip install psycopg2
+
+
+Si no tenemos internet
+campusOpenData/bin/pip install requisites/argparse-1.4.0.tar.gz
+campusOpenData/bin/pip install requisites/itsdangerous-0.24.tar.gz
+campusOpenData/bin/pip install requisites/MarkupSafe-0.23.tar.gz
+campusOpenData/bin/pip install requisites/Werkzeug-0.11.3.tar.gz
+campusOpenData/bin/pip install requisites/Jinja2-2.8.tar.gz
+campusOpenData/bin/pip install requisites/wsgiref-0.1.2.zip
+campusOpenData/bin/pip install requisites/Flask-0.10.1.tar.gz
+campusOpenData/bin/pip install requisites/psycopg2-2.6.1.tar.gz
+
+
+--------------------------------------------------------------------------------
+
+Creamos los directorios de la aplicacion
+mkdir app
+mkdir app/static
+mkdir app/templates
+mkdir tmp
+
+
+
+
+
+
+
+
