@@ -1,0 +1,28 @@
+{% extends "page.html" %}
+{% block content %}
+	<div class"muestraContenido">
+		<h2>{{contenido.nombre}}</h2>
+<!--		tags-->
+		{% include 'tags.html' %}
+		
+		<div class="fieldName">
+			Ponente:
+		</div>
+		<div class="fieldValue">
+			{{contenido.aparece}}
+		</div>
+		
+<!--		Iframe contenido-->
+		
+		{% include 'contentIframe.html' %}
+		
+		<div class="fieldName">
+			Descripción:
+		</div>
+		<div class="fieldValue">
+			{{contenido.descripcion}}
+		</div>
+<!--		evento-->
+		{% include 'event.html' %}
+	</div>
+{% endblock %}

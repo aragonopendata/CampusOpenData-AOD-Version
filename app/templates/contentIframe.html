@@ -1,0 +1,18 @@
+<!--Plantilla que pinta el contenido-->
+<div class="contenido">
+	{% if contenido.formato.nombre=='Infografía' %}
+		<div class="imagenPlayer">
+			<img id="infografia" src="{{ contenido.url }}" style="display: block;">
+		</div>
+	{% elif contenido.formato.nombre=='Podcast' %}
+		<div class="podcastPlayer">
+			<audio src="{{ contenido.url }}" title="aod audio" preload="auto" controls="controls"></audio>
+		</div>
+	{% elif contenido.formato.nombre=='Presentación' %}
+		<iframe src="http://www.slideshare.net/slideshow/embed_code/key/1dNxodelbTuDcq" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+		
+		
+	{% elif contenido.formato.nombre=='Vídeo' %}
+		You killed Kenny!  You bastard!!!
+	{% endif %}
+</div>

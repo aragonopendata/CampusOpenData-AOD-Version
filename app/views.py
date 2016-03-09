@@ -7,6 +7,7 @@ from flask import session
 
 from app import app
 import BBDDCampusOpenData
+import config as configuracion
 
 
 def __init__():
@@ -36,3 +37,12 @@ def index():
 	contenidos = BBDDCampusOpenData.filtraContenido(cursor, filtroTipo, filtroEtiqueta, filtroPonente, filtroNombreEvento, filtroFormato=None)
 	
 	return render_template('index.html', contenidos, comboTipos, comboEtiquetas, comboPonentes, comboPonentes, comboEventos, comboFormatos)
+	
+@app.route('/show_content/<id>')
+def show_content(id):
+	cursor= conexionBBDD.cursor()
+	contenido = BBDDCampusOpenData.obtenContenidoPorID(id)
+	return render_template('showContent.html', contenido)
+
+
+	

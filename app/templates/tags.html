@@ -1,0 +1,15 @@
+<!--Plantilla que pinta etiquetas de un contenido-->
+{% if contenido.temas|length > 0 %}
+	<div class="fieldName">Etiquetas y palabras clave</div>
+	<div class="fieldValue">
+		<section class="tags">
+		{% for tema in contenido.temas %}
+			<ul class="tag-list well">
+				<li>
+					<a class="tag recuadroRedondeado" href="/?filtroEtiqueta={{tema.nombre}}">{{tema.nombre}}</a>
+				</li>
+			</ul>
+		{% endfor %}
+		</section>
+	</div>
+{% endif %}
