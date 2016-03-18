@@ -1,0 +1,185 @@
+<style >
+	/*****************************************************************************
+	Properties de la web
+	*****************************************************************************/
+	
+	#content{
+		max-width: 980px;
+		height: auto;
+		margin: auto;
+	}
+	
+	@font-face {
+		font-family: aodFont;
+		font-style:  normal;
+		font-weight: normal;
+		src: url('../fonts/AODFont.otf');
+	}
+	
+	/************************************************************************************
+	RESPONSIVE Diapositivas y vídeos
+	*************************************************************************************/
+	.slidePlayer, .contentVideoPlayer {
+		position: relative;
+		padding-bottom: 56.25%;
+		height: 0;
+		overflow: hidden;
+	}
+	.slidePlayer iframe, .slidePlayer object, .slidePlayer embed, .contentVideoPlayer iframe, .contentVideoPlayer object, .contentVideoPlayer embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	/************************************************************************************
+	RESPONSIVE imagenes
+	*************************************************************************************/
+	.muestraContenido .contenido .imagenPlayer img {
+		max-width: 100%;
+		height: auto;
+	}
+	@media \0screen {
+		.muestraContenido .contenido .imagenPlayer img { 
+			width: auto; /* for ie 8 */
+		}
+	}
+	
+	/*****************************************************************************
+	Propiedades del indice
+	*****************************************************************************/
+	.muestraIndice{
+		margin: auto;
+/*		width: 980px;*/
+		text-align: justify;
+		max-width: 100%;
+	}
+	
+	.muestraIndice h1{
+/*		float: left;*/
+/*		width: 85%;*/
+		font-size: 28px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		color: #3b515c;
+	}
+	
+	.muestraIndice h2{
+/*		float: left;*/
+/*		width: 85%;*/
+		font-size: 22px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		color: #3b515c;
+	}
+	
+	
+	.muestraIndice .filterContent .chosen-container {
+		width: 177px !important;
+	}
+	
+	.muestraIndice .filterContent .chosen-drop {
+		width: 177px !important;
+	}
+	
+	/*****************************************************************************
+	Propiedades del contenido
+	*****************************************************************************/
+	.muestraContenido{
+		margin: auto;
+/*		width: 980px;*/
+		text-align: justify;
+		max-width: 97%;
+		margin-left: 1em;
+	}
+	
+	.muestraContenido h1{
+/*		float: left;*/
+/*		width: 85%;*/
+		font-size: 28px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		color: #3b515c;
+	}
+	
+	.muestraContenido h2{
+/*		float: left;*/
+/*		width: 85%;*/
+		font-size: 22px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		color: #3b515c;
+	}
+	
+	.muestraContenido .fieldName {
+		color: #76a1b8;
+		text-transform: uppercase;
+/*		padding-left: 15px;*/
+		padding-right: 15px;
+		padding-top: 15px;
+		font-weight: bold;
+	}
+	
+	.muestraContenido .fieldValue {
+/*		padding-left: 15px;*/
+		padding-right: 15px;
+		overflow: auto;
+	}
+	
+	.muestraContenido .recuadroRedondeado {
+		-moz-border-radius: 15px;
+		-webkit-border-radius: 15px;
+		border-radius: 15px;
+		border: 1px solid #76a1b8;
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-left: 4px;
+		padding-right: 4px;
+		margin: 4px;
+		background-color: #76a1b8;
+		color: #fff !important;
+		text-decoration: none !important;
+		font-weight: bold;
+	}
+	
+	
+	/*****************************************************************************
+	Properties para los errores
+	*****************************************************************************/
+	#errores h1 {
+		font-family: 'aodFont', 'Roboto', Helvetica, Arial, sans-serif;
+		float: left;
+		color: rgb(153, 151, 144);
+		font-size: 46px;
+		font-weight: 100;
+		text-align: justify;
+		line-height: normal;
+		vertical-align: middle;
+	}
+
+	#errores h2 {
+		font-family: 'aodFont', 'Roboto', Helvetica, Arial, sans-serif;
+		float: left;
+		color: rgb(153, 151, 144);
+		font-size: 24px;
+		font-weight: 100;
+		text-align: justify;
+		line-height: normal;
+	}
+	
+	#errores iframe{
+		margin-top:20px;
+	}
+	
+	#elerror{
+		font-size: 20px;
+		float: right;
+		vertical-align: middle;		
+		margin-top: 9%;
+	}
+
+	.bannerBuscadorError #cajaDeBusqInput {
+		max-width: 90% !important;
+	}
+</style>

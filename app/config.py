@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import psycopg2
 
 CAMPUS_OPEN_DATA_HOST						= 'localhost'

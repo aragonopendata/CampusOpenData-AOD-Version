@@ -2,7 +2,14 @@
 
 import config as configuracion
 
+
 from models import *
+
+
+#Método que devuelve El string en el que modificamos los caracteres "raros" por (pseudo)etiquetas de HTML
+def meteEtiquetaHTML(frase_cambiar):
+	devolver =frase_cambiar.replace('á', '&aacute;').replace('é', '&eacute;').replace('í', '&iacute;').replace('ó', '&oacute;').replace('ú', '&uacute;').replace('Á', '&Aacute;').replace('É', '&Eacute;').replace('Í', '&Iacute;').replace('Ó', '&Oacute;').replace('Ú', '&Uacute;').replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;').replace('¿', '&iquest;').replace('¡', '&iexcl;').replace('Ñ', '&Ntilde;').replace('ñ', '&ntilde;').replace('º', '&ordm;').replace('ª', '&ordf;')	
+	return devolver
 
 
 #------------------------------------------------------------------------------#
@@ -29,6 +36,19 @@ def obtenTemaPorID(ide, cursor):
 	if resultados is not None:
 		for resultado in resultados:
 			devolver = Tema(resultado[0], resultado[1]) 
+			return devolver
+	else:
+		print 'No hay tema con el id '+str(ide)
+		return 0
+
+#Método que devuelve un objeto tema obtenido de la base de datos a traves de su id con los caractes raros metidos como pseudoetiquetas de html para que no nos de error UnicodeDecodeError
+def obtenTemaPorID4Jinja(ide, cursor):
+	consulta = "SELECT id, nombre FROM tema WHERE id = '"+str(ide)+"';"
+	cursor.execute(consulta)
+	resultados = cursor.fetchall()
+	if resultados is not None:
+		for resultado in resultados:
+			devolver = Tema(resultado[0], meteEtiquetaHTML(resultado[1])) 
 			return devolver
 	else:
 		print 'No hay tema con el id '+str(ide)
@@ -84,7 +104,7 @@ def todoLosTemas(cursor):
 	resultados = cursor.fetchall()
 	if resultados is not None:
 			for resultado in resultados:
-				devolver.append(resultado[1])
+				devolver.append(meteEtiquetaHTML(resultado[1]))
 	return devolver
 
 
@@ -117,6 +137,19 @@ def obtenPlataformaPorID(ide, cursor):
 	if resultados is not None:
 		for resultado in resultados:
 			devolver = Plataforma(resultado[0], resultado[1]) 
+			return devolver
+	else:
+		print 'No hay plataforma con el id '+str(ide)
+		return 0
+
+#Método que devuelve un objeto plataforma obtenido de la base de datos a traves de su id
+def obtenPlataformaPorID4Jinja(ide, cursor):
+	consulta = "SELECT id, nombre FROM plataforma WHERE id = '"+str(ide)+"';"
+	cursor.execute(consulta)
+	resultados = cursor.fetchall()
+	if resultados is not None:
+		for resultado in resultados:
+			devolver = Plataforma(resultado[0], meteEtiquetaHTML(resultado[1])) 
 			return devolver
 	else:
 		print 'No hay plataforma con el id '+str(ide)
@@ -159,7 +192,7 @@ def todaLasPlataformas(cursor):
 	resultados = cursor.fetchall()
 	if resultados is not None:
 			for resultado in resultados:
-				devolver.append(Plataforma(resultado[0], resultado[1]))
+				devolver.append(meteEtiquetaHTML(resultado[1]))
 	return devolver
 
 
@@ -197,6 +230,19 @@ def obtenTipoPorID(ide, cursor):
 		return 0
 
 
+#Método que devuelve un objeto tipo obtenido de la base de datos a traves de su id
+def obtenTipoPorID4Jinja(ide, cursor):
+	consulta = "SELECT id, nombre FROM tipo WHERE id = '"+str(ide)+"';"
+	cursor.execute(consulta)
+	resultados = cursor.fetchall()
+	if resultados is not None:
+		for resultado in resultados:
+			devolver = Tipo(resultado[0], meteEtiquetaHTML(resultado[1])) 
+			return devolver
+	else:
+		print 'No hay tipo con el id '+str(ide)
+		return 0
+
 #Método que inserta el y devuelve el objeto, si el tipo existe en la base de datos devuelve el objeto 
 def insertaTipo(tipo, conexion):
 	cursor = conexion.cursor()
@@ -229,12 +275,12 @@ def contenidosConTipo(tipo, cursor):
 #Método que nos devuelve todo los tipos que hay en la base de datos
 def todoLosTipos(cursor):
 	devolver = []
-	consulta="SELECT id, nombre FROM tipo ORDER BY nombre;"
+	consulta="SELECT DISTINCT nombre FROM tipo ORDER BY nombre;"
 	q=cursor.execute(consulta)
 	resultados = cursor.fetchall()
 	if resultados is not None:
 			for resultado in resultados:
-				devolver.append(resultado[1])
+				devolver.append(meteEtiquetaHTML(resultado[0]))
 	return devolver
 
 
@@ -269,6 +315,21 @@ def obtenFormatoPorID(ide, cursor):
 			return devolver
 	else:
 		return 0
+
+
+#Método que devuelve un objeto formato obtenido de la base de datos a traves de su id
+def obtenFormatoPorID4Jinja(ide, cursor):
+	consulta = "SELECT id, nombre FROM formato WHERE id = '"+str(ide)+"';"
+	cursor.execute(consulta)
+	resultados = cursor.fetchall()
+	if resultados is not None:
+		for resultado in resultados:
+			devolver = Formato(resultado[0], meteEtiquetaHTML(resultado[1])) 
+			return devolver
+	else:
+		return 0
+
+
 
 #Método que inserta el y devuelve el objeto, si el formato existe en la base de datos devuelve el objeto 
 def insertaFormato(formato, conexion):
@@ -307,7 +368,7 @@ def todoLosFormatos(cursor):
 	resultados = cursor.fetchall()
 	if resultados is not None:
 			for resultado in resultados:
-				devolver.append(resultado[1])
+				devolver.append(meteEtiquetaHTML(resultado[1]))
 	return devolver
 
 
@@ -345,6 +406,20 @@ def obtenEventoPorID(ide, cursor):
 		print 'No hay evento con el id '+str(ide)
 		return 0
 
+#Método que devuelve un objeto evento obtenido de la base de datos a traves de su id
+def obtenEventoPorID4Jinja(ide, cursor):
+	consulta = "SELECT id, nombre, lugar, descripcion, fecha FROM evento WHERE id = '"+str(ide)+"';"
+	cursor.execute(consulta)
+	resultados = cursor.fetchall()
+	if resultados is not None:
+		for resultado in resultados:
+			devolver = Evento(resultado[0], meteEtiquetaHTML(resultado[1]), meteEtiquetaHTML(resultado[2]), meteEtiquetaHTML(resultado[3]), meteEtiquetaHTML(resultado[4])) 
+			return devolver
+	else:
+		print 'No hay evento con el id '+str(ide)
+		return 0
+
+
 #Método que inserta el y devuelve el objeto, si el evento existe en la base de datos devuelve el objeto 
 def insertaEvento(nombre, lugar, descripcion, fecha, conexion):
 	cursor = conexion.cursor()
@@ -377,12 +452,12 @@ def contenidosConEvento(evento, fecha, cursor):
 #Método que nos devuelve todo los eventos que hay en la base de datos
 def todoLosEventos(cursor):
 	devolver = []
-	consulta="SELECT id, nombre, lugar, descripcion, fecha FROM evento ORDER BY nombre;"
+	consulta="SELECT DISTINCT nombre FROM evento ORDER BY nombre;"
 	q=cursor.execute(consulta)
 	resultados = cursor.fetchall()
 	if resultados is not None:
 			for resultado in resultados:
-				devolver.append(resultado[1])
+				devolver.append(meteEtiquetaHTML(resultado[0]))
 	return devolver
 
 
@@ -424,6 +499,27 @@ def obtenContenidoPorID(ide, cursor):
 		print 'No hay contenido con el id '+str(ide)
 		return 0
 
+
+#Método que devuelve un objeto contenido obtenido de la base de datos a traves de su id
+def obtenContenidoPorID4Jinja(ide, cursor):
+	consulta = "SELECT id, titulo, descripcion, formato, tipo, evento, aparece, url, plataforma, thumbnail FROM contenido WHERE id = '"+str(ide)+"';"
+	cursor.execute(consulta)
+	resultados = cursor.fetchall()
+	if resultados is not None:
+		for resultado in resultados:
+			idTemas = temasDeContenido(resultado[0], cursor)
+			temas=[]
+			for idTema in idTemas:
+				temas.append(obtenTemaPorID4Jinja(idTema, cursor))
+			formato = obtenFormatoPorID4Jinja(resultado[3], cursor)
+			tipo=obtenTipoPorID4Jinja(resultado[4], cursor)
+			evento=obtenEventoPorID4Jinja(resultado[5], cursor)
+			plataforma=obtenPlataformaPorID4Jinja(resultado[8], cursor)
+			devolver = Contenido(resultado[0], meteEtiquetaHTML(resultado[1]), meteEtiquetaHTML(resultado[2]), formato, tipo, evento, meteEtiquetaHTML(resultado[6]), resultado[7], plataforma, resultado[9], temas) 
+			return devolver
+	else:
+		print 'No hay contenido con el id '+str(ide)
+		return 0
 
 #Método que añade temas de un contenido a la tabla intermedia. Comprueba si tanto los temas como el contenido existen
 def insertaTemasDeContenido(idContenido, arrayIdTemas, conexion):
@@ -508,17 +604,17 @@ def todoLosContenidos(cursor):
 	resultados = cursor.fetchall()
 	if resultados is not None:
 			for resultado in resultados:
-				formato = obtenFormatoPorID(resultado[3], cursor)
-				tipo=obtenTipoPorID(resultado[4], cursor)
-				evento =obtenEventoPorID(resultado[5], cursor)
-				plataforma = obtenPlataformaPorID(resultado[8], cursor)
+				formato = obtenFormatoPorID4Jinja(resultado[3], cursor)
+				tipo=obtenTipoPorID4Jinja(resultado[4], cursor)
+				evento =obtenEventoPorID4Jinja(resultado[5], cursor)
+				plataforma = obtenPlataformaPorID4Jinja(resultado[8], cursor)
 				idsTemas = temasDeContenido(resultado[0], cursor)
 				temas = []
 				for idTema in idsTemas:
-					tema = obtenTemaPorID(idTema, cursor)
+					tema = obtenTemaPorID4Jinja(idTema, cursor)
 					if (tema!=0):
 						temas.append(tema)
-				contenido = Contenido(resultado[0], resultado[1], resultado[2], formato, tipo, evento, resultado[6], resultado[7], plataforma, resultado[8])
+				contenido = Contenido(resultado[0], meteEtiquetaHTML(resultado[1]), meteEtiquetaHTML(resultado[2]), formato, tipo, evento, meteEtiquetaHTML(resultado[6]), resultado[7], plataforma, resultado[8])
 				contenido.temas = temas
 				devolver.append(contenido)
 	return devolver
@@ -531,7 +627,7 @@ def todoLosPonentes(cursor):
 	resultados = cursor.fetchall()
 	if resultados is not None:
 		for resultado in resultados:
-			devolver.append(resultado[0])
+			devolver.append(meteEtiquetaHTML(resultado[0]))
 	return devolver
 
 #Método que sirve para filtrar los contenidos dado los datos
@@ -560,7 +656,7 @@ def filtraContenido(cursor, filtroTipo=None, filtroEtiqueta=None, filtroPonente=
 	if (filtroNombreEvento):
 		tablas = tablas + ", public.evento"
 		if len(condicion)==0:
-			condicion = "evento.id = contenido.evento AND evento.titulo = '"+str(filtroNombreEvento).strip()+"'"
+			condicion = "evento.id = contenido.evento AND evento.nombre = '"+str(filtroNombreEvento).strip()+"'"
 		else:
 			condicion = condicion + " AND evento.id = contenido.evento AND evento.nombre = '"+str(filtroNombreEvento).strip()+"'"
 	if (filtroFormato):
@@ -575,13 +671,15 @@ def filtraContenido(cursor, filtroTipo=None, filtroEtiqueta=None, filtroPonente=
 			condicion = "plataforma.id = contenido.plataforma AND plataforma.nombre = '"+str(filtroPlataforma).strip()+"'"
 		else:
 			condicion = condicion + " AND plataforma.id = contenido.plataforma AND plataforma.nombre = '"+str(filtroPlataforma).strip()+"'"
-	consulta = "SELECT DISTINCT contenido.id "+tablas+" WHERE "+ condicion
-	print 'La consulta queda: '+consulta
+	consulta = "SELECT DISTINCT contenido.id " + tablas
+	if len(condicion)>0:
+		consulta = consulta +" WHERE "+ condicion
+	print 'La CONSULTA queda: '+consulta
 	q=cursor.execute(consulta)
 	resultados = cursor.fetchall()
 	if resultados is not None:
 		for resultado in resultados:
-			devolver.append(obtenContenidoPorID(resultado[0], cursor))
+			devolver.append(obtenContenidoPorID4Jinja(resultado[0], cursor))
 	return devolver
 	
 
