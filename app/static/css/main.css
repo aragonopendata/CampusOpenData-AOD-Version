@@ -16,6 +16,11 @@
 		src: url('../fonts/AODFont.otf');
 	}
 	
+	.oculto {
+		display: none;
+		visibility: hidden;
+	}
+	
 	/************************************************************************************
 	RESPONSIVE Diapositivas y vídeos
 	*************************************************************************************/
@@ -77,10 +82,117 @@
 	
 	.muestraIndice .filterContent .chosen-container {
 		width: 177px !important;
+		margin-bottom: 15px;
 	}
 	
 	.muestraIndice .filterContent .chosen-drop {
 		width: 177px !important;
+	}
+	
+	.muestraIndice .resultadosContenido li {
+		display: inline-flex;
+		width: 300px;
+		height: 200px;
+		background-color: bisque;
+		margin-right: 23px;
+		margin-bottom: 15px;
+	}
+	
+	.muestraIndice .resultadosContenido .thumbnail {
+/*		display: block;*/
+	}
+	
+	.muestraIndice .resultadosContenido .front  img{
+	}
+	
+	.muestraIndice .resultadosContenido .front  {
+		position: absolute;
+		width: 100%;
+		z-index:0;
+	}
+	
+	.muestraIndice .resultadosContenido .front .thumbnail-title {
+		position: absolute;
+		bottom: 7px;
+/*		margin-left: 5px;*/
+		margin-right: 5px;
+		color:white;
+		width: 100%;
+		background-color: black;
+		opacity: 0.5;
+		width:300px;
+	}
+	
+	.muestraIndice .resultadosContenido .front .thumbnail-title .recortado, .muestraIndice .resultadosContenido .back .restoBack .recortado{
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin-left: 5px;
+	}
+	
+	.muestraIndice .resultadosContenido .back{
+		background-color: black;
+		opacity: 0.8;
+		padding-top: 5px;
+		width:300px;
+		position: absolute;
+		z-index:1;
+	}
+	
+	
+	
+	.muestraIndice .resultadosContenido .back .descripcion{
+		display: block;
+		display: -webkit-box;
+		height: 85px;
+		font-size: 12px;
+		line-height: 1.4;
+		-webkit-line-clamp: 5;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		border-bottom: 1px solid white;
+		clear: both;
+		padding-left:5px;
+		padding-right:5px;
+		font-weight: 100;
+	}
+	
+	
+	
+	
+	.muestraIndice .resultadosContenido .fieldName{
+		color: white;
+		font-weight: bolder;
+		font-size: 14px;
+		padding-left:5px;
+		padding-right:5px;
+	}
+	
+	.muestraIndice .resultadosContenido .back .restoBack .recortado{
+		
+		font-weight: 100;
+	}
+	
+	.muestraIndice .resultadosContenido .descripcion{
+		color:white;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	
+	.muestraIndice .resultadosContenido .back .restoBack{
+		width:300px;
+		margin-top: 7px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		color: white;
+	}
+	
+	.muestraIndice .resultadosContenido .back .restoBack .ponente, .muestraIndice .resultadosContenido .back .restoBack .fecha{
+		display: inline-flex;
+		text-align: right;
+/*		font-weight: 100;*/
 	}
 	
 	/*****************************************************************************

@@ -8,7 +8,7 @@ from models import *
 
 #Método que devuelve El string en el que modificamos los caracteres "raros" por (pseudo)etiquetas de HTML
 def meteEtiquetaHTML(frase_cambiar):
-	devolver =frase_cambiar.replace('á', '&aacute;').replace('é', '&eacute;').replace('í', '&iacute;').replace('ó', '&oacute;').replace('ú', '&uacute;').replace('Á', '&Aacute;').replace('É', '&Eacute;').replace('Í', '&Iacute;').replace('Ó', '&Oacute;').replace('Ú', '&Uacute;').replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;').replace('¿', '&iquest;').replace('¡', '&iexcl;').replace('Ñ', '&Ntilde;').replace('ñ', '&ntilde;').replace('º', '&ordm;').replace('ª', '&ordf;')	
+	devolver =frase_cambiar.replace('á', '&aacute;').replace('é', '&eacute;').replace('í', '&iacute;').replace('ó', '&oacute;').replace('ú', '&uacute;').replace('Á', '&Aacute;').replace('É', '&Eacute;').replace('Í', '&Iacute;').replace('Ó', '&Oacute;').replace('Ú', '&Uacute;').replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;').replace('¿', '&iquest;').replace('¡', '&iexcl;').replace('Ñ', '&Ntilde;').replace('ñ', '&ntilde;').replace('º', '&ordm;').replace('ª', '&ordf;')
 	return devolver
 
 
@@ -658,7 +658,7 @@ def filtraContenido(cursor, filtroTipo=None, filtroEtiqueta=None, filtroPonente=
 		if len(condicion)==0:
 			condicion = "evento.id = contenido.evento AND evento.nombre = '"+str(filtroNombreEvento).strip()+"'"
 		else:
-			condicion = condicion + " AND evento.id = contenido.evento AND evento.nombre = '"+str(filtroNombreEvento).strip()+"'"
+			condicion = condicion + " AND evento.id = contenido.evento AND evento.nombre = '"+str(filtroNombreEvento).strip().replace("'", "\''")+"'"
 	if (filtroFormato):
 		tablas = tablas + ", public.formato"
 		if len(condicion)==0:
@@ -677,9 +677,26 @@ def filtraContenido(cursor, filtroTipo=None, filtroEtiqueta=None, filtroPonente=
 	print 'La CONSULTA queda: '+consulta
 	q=cursor.execute(consulta)
 	resultados = cursor.fetchall()
+	idsContenidos = []
 	if resultados is not None:
 		for resultado in resultados:
-			devolver.append(obtenContenidoPorID4Jinja(resultado[0], cursor))
+			idsContenidos.append(resultado[0])
+		
+		
+		if len(resultados)>0:
+			consulta2 = "SELECT contenido.id FROM  public.contenido, public.evento WHERE evento.id = contenido.evento AND  contenido.id IN ("
+			i=0
+			for idContenido in idsContenidos:
+				if (i<len(idsContenidos)-1):
+					consulta2 = consulta2 + str(idContenido)+", "
+				else:
+					consulta2 = consulta2 + str(idContenido)+") ORDER BY evento.fecha DESC;"
+				i=i+1
+			q2=cursor.execute(consulta2)
+			resultados2 = cursor.fetchall()
+			if resultados2 is not None:
+				for resultado2 in resultados2:
+					devolver.append(obtenContenidoPorID4Jinja(resultado2[0], cursor))
 	return devolver
 	
 

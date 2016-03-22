@@ -51,6 +51,9 @@ function tryToSelectItem(obj, txt) {
 	}
 }
 
+
+
+
 //Capturamos los parametros de la url para de este modo modificar los combox
 function capturaParametros(){
 	
@@ -71,7 +74,7 @@ function capturaParametros(){
 	
 	
 	
-	console.log('Tenemos etiqueta2 '+filtroTipo);
+//	console.log('Tenemos etiqueta2 '+filtroTipo);
 //	console.log('El formato es :\n'+filtroFormatos);
 //	
 //	var parametros = [
@@ -90,12 +93,35 @@ function capturaParametros(){
 	tryToSelectItem($("#filtroFormatos")[0], filtroFormatos);
 }
 
+
+//Función que sirve para cuando se haga over sobre un contenido y cambie el div con más info
+function contenidoOver(){
+	$(".resultadosContenido .thumbnail").hover(
+		function(){
+			var id = $(this).attr('id');
+			//$('#'+id+' .front').addClass("oculto");
+			$('#'+id+' .back').removeClass("oculto");
+			console.log('Se entra en '+id);
+		}, 
+		function(){
+			var id = $(this).attr('id');
+			//$('#'+id+' .front').removeClass("oculto");
+			$('#'+id+' .back').addClass("oculto");
+			console.log('Se sale de '+id);
+		}
+	);
+}
+
+
 $(document).ready(function() {
 	
 	capturaParametros();
 	var config	= {
 		disable_search: true
 	};
+	
+	
+	contenidoOver();
 	
 	var fOnChgChosen = function onChgChosen() {		
 		var parametros = [
@@ -108,7 +134,7 @@ $(document).ready(function() {
 		var shallowEncoded = $.param( parametros, true );
 		var shallowDecoded = decodeURIComponent( shallowEncoded );
 		//Meterlo como parametro
-		console.log('Los parámetros son:\n'+shallowEncoded+'\n'+shallowDecoded);
+//		console.log('Los parámetros son:\n'+shallowEncoded+'\n'+shallowDecoded);
 		window.location = window.location.origin+'/?'+shallowDecoded;
 		return false;
 	}
