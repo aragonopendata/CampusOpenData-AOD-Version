@@ -56,12 +56,16 @@
 			<script type="text/javascript" src="../static/js/jquery-1.12.1.min.js"></script>
 <!--			<script type="text/javascript" src="../static/js/main.js"></script>-->
 			<script type="text/javascript" src="../static/js/responsive.js"></script>
-		{% else %}
+		{% elif '/' == request.path%}
 			<script type="text/javascript" src="static/js/jquery-1.12.1.min.js"></script>
 			<script type="text/javascript" src="static/js/main.js"></script>
 			<script type="text/javascript" src="static/js/responsive.js"></script>
 			<script type="text/javascript" src="static/js/chosen.jquery.js"></script>
 			<script type="text/javascript" src="static/js/chosenImage.jquery.js"></script>
+		{% else %}
+			
+			<script type="text/javascript" src="static/js/jquery-1.12.1.min.js"></script>
+			<script type="text/javascript" src="static/js/responsive.js"></script>
 		{% endif %}
 		
 		

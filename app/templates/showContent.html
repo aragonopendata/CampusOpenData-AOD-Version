@@ -9,22 +9,25 @@
 		<h2>{{contenidoTitulo}}</h2>
 <!--		tags-->
 		{% include 'tags.html' %}
-		
-		<div class="fieldName">
-			Ponente:
-		</div>
-		<div class="fieldValue">
-			<a  href="/?filtroPonentes={{ponente}}">{{ponente}}</a>
-		</div>
+		{% if ponente %}
+			<div class="fieldName">
+				Ponente:
+			</div>
+			<div class="fieldValue">
+				<a  href="/?filtroPonentes={{ponente}}">{{ponente}}</a>
+			</div>
+		{% endif %}
 		<div style="padding-top:  15px;"></div>
 <!--		Iframe contenido-->
 		{% include 'contentIframe.html' %}
-		<div class="fieldName">
-			Descripci&oacute;n:
-		</div>
-		<div class="fieldValue">
-			{{contenidoDescripcion}}
-		</div>
+		{% if contenidoDescripcion %}
+			<div class="fieldName">
+				Descripci&oacute;n:
+			</div>
+			<div class="fieldValue">
+				{{contenidoDescripcion}}
+			</div>
+		{% endif %}
 <!--		evento-->
 		{% include 'event.html' %}
 

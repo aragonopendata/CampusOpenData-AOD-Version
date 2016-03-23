@@ -1,0 +1,150 @@
+/* Imágenes utilizadas */
+/* my_logo.jpg - Imagen de la cabecera de los documentos exportados como Página sola */
+/* my_list.gif - Sustituye al punto de las listas no numeradas introducidas desde eXeLearning  */
+/* my_ims_header.jpg - Imagen de fondo para el título de cada página en los IMS y en los documentos exportados como Página sola */
+/* my_header.jpg - Imagen de la cabecera de los documentos exportados como Sitio web */
+/* Los iconos de los iDevices también se controlan mediante CSS (ver iDevice icons) */ 
+
+/* Colores */
+body{
+	color:#333333; /* Cuerpo de texto */
+	background:#ffffff; /* Color de fondo */
+}
+a{
+	color:#0055A6; /* Enlaces */
+}
+#header{
+	color:#666666; /* Título del proyecto */
+}
+#nodeTitle{
+	color:#ffffff; /* Título de cada página */
+    /*text-shadow:1px 1px 1px #3D545F;*/ /* Sombra  */
+}
+#main #nodeDecoration{
+	border-color:#E7EBEE; /* Borde del título de cada página */
+	background-color:#75A2B7; /* Color de fondo */
+}
+.iDeviceTitle{
+	color: #8A5F31; /* Títulos de los iDevices */
+}
+.iDevice_inner{
+	background-color:#ECE9DE; /* Fondo del cuerpo del iDevice */
+	color:#4d4d4d; /* Texto de los iDevices */
+	border-color:#EBE3CC; /* Borde del cuerpo de los iDevices */
+}
+#siteFooter{
+	color:#666666; /* Texto del pie de página */
+}
+#siteFooter a{
+	color:#8A5F31; /* Enlaces del pie de página */
+}
+input.feedbackbutton{
+	background-color: #DBE992; /* Color de fondo del botón de feedback */
+}
+
+/* Otras definiciones */
+body{font:.92em/1.6 Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
+#nodeTitle{font-size:1.3em;margin:0;text-align:left;font-weight:bold}
+#main #nodeDecoration{padding:17px 15px 5px 15px;margin-bottom:15px;background-repeat:no-repeat;background-position:right 0;border-width:0px;border-style:solid;border-bottom: solid 7px #DEDEDE;background-image:url(my_ims_header.jpg);text-align:left}
+#header{height:54px;background-repeat:no-repeat;background-position:0 0;background-image:url(my_logo.jpg);padding-bottom:10px;padding-left:10px;font-size:1.1em;font-weight:bold}
+#header h1{margin:0;font-size:1em}
+#main ul li{width:auto;list-style-image:url(my_list.gif);margin-bottom:0.2em}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+#main h2{font-size:1.4em}
+#main h3{font-size:1.3em}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{margin:10px 0 20px 0}
+.iDeviceTitle{font-size:1.2em;vertical-align:bottom;top:auto} 
+#main .iDeviceTitle{display:inline;font-size:1.2em}
+
+/* iDevice icons */
+.iDevice_icon{width:30px;height:auto;margin-right:5px} /* Legacy: old iDevices */
+.iDevice_header{background-image:url(icon_generic.gif);padding:5px 0 5px 37px;margin-bottom:5px}
+.activityIdevice .iDevice_header{background-image:url(icon_activity.gif)}
+.readingIdevice .iDevice_header{background-image:url(icon_reading.gif);padding-left:41px}
+.ListaIdevice .iDevice_header,
+.QuizTestIdevice .iDevice_header,
+.MultichoiceIdevice .iDevice_header,
+.TrueFalseIdevice .iDevice_header,
+.MultiSelectIdevice .iDevice_header,
+.ClozeIdevice .iDevice_header{background-image:url(icon_question.gif)}
+.CasestudyIdevice .iDevice_header{background-image:url(icon_casestudy.gif)}
+.preknowledgeIdevice .iDevice_header{background-image:url(icon_preknowledge.gif);padding-left:39px}
+.GalleryIdevice .iDevice_header{background-image:url(icon_gallery.gif)}
+.objectivesIdevice .iDevice_header{background-image:url(icon_objectives.gif)}
+.ReflectionIdevice .iDevice_header{background-image:url(icon_reflection.gif)}
+
+.iDevice_inner{padding: 10px 20px;border-width:1px 0 1px 0;border-style:dotted}
+.iDevice_content:before,.iDevice_content:after{content:"";display:table}
+.iDevice_content:after{clear:both}
+.iDevice_content{*zoom:1}/* IE6/7: Trigger hasLayout and contain floats */
+
+/* base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+
+/* Hide/Show iDevice */
+.toggle-idevice{display:block;margin:0;text-align:right}
+.iDevice_header .toggle-idevice{float:right;padding-top:2px;margin:0}
+.toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(my_hide_show.png) no-repeat 0 -16px}
+.toggle-idevice .show-idevice{background-position:0 0}
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+
+/* To review */
+.TrueFalseIdevice .question{margin-bottom:25px}
+.TrueFalseIdevice .question:last-child{margin-bottom:0}
+
+/* Otros */
+.glosario{color:#B5734D;font-weight:bold}
+.button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 3px solid #537281;
+    border-radius: 14px;
+    background: #88bbd4;
+    background: -webkit-gradient(linear, left top, left bottom, from(#88bbd4), to(#76a3b8));
+    background: -moz-linear-gradient(top, #88bbd4, #76a3b8);
+    background: linear-gradient(to bottom, #88bbd4, #76a3b8);
+    text-shadow: #3b525c 1px 1px 1px;
+    font: normal normal bold 20px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:hover,
+.button:focus {
+    border: 3px solid #76a3b8;
+    background: #a3e0fe;
+    background: -webkit-gradient(linear, left top, left bottom, from(#a3e0fe), to(#8ec4dd));
+    background: -moz-linear-gradient(top, #a3e0fe, #8ec4dd);
+    background: linear-gradient(to bottom, #a3e0fe, #8ec4dd);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:active {
+    background: #537281;
+    background: -webkit-gradient(linear, left top, left bottom, from(#537281), to(#76a3b8));
+    background: -moz-linear-gradient(top, #537281, #76a3b8);
+    background: linear-gradient(to bottom, #537281, #76a3b8);
+}
+.button:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADyElEQVRIiZWVXWhcRRTHf3fmfuxmNx/YZsl3SqSlPsRCo0JBpQ+WKoYSClK0CIJSiyhaQkEDhmLwoWiJItIiPvRFBB9q7UMTAkKhhZZCiRQMmsYkNjYWEt0mm6zZ3fnwIbnL3uxuSQ8MzLkzc35zzvw5F4DR0dGW5eXlTCaTsVsd6XRaT0xMfDAwMMDDzAVYXFzcHovFkkKIyKK1FsdxInNrLVprrLUiFoud6e3tZWRk5Ivx8fGKAAGgtY4ErWhaY+/dLe7RWlNTUyNSqdRnw8PDx6plUAYIb1w6t9ai3nuN/AvdpGensdZircUYQ1tbm9va2np2bGzsWE9PT2WAUqoYqNJAKewvNzF+QGFupghWSiGlpL29XXR2dn49NDR0fDNEABhjIvV2HCc6d12cji7c1RV0og4hBFJKMpkMs7OzzM3NAbgNDQ1f9ff3v/XIJcJxEIeOoKTEbW5FCIHneTQ1NZFIJPA8DyklqVTK7ejo6A/jwoaKwgyqPjAgnj+ABOSdCWhuwfO89e9C4LpuqCxqa2vFBsBUzKAUUjo3f0xihUSePU0+l1u/nesSj8dJJBIkk0kSiQSxWKz8DbTWGGOqlwiwt66TPvo2NdO/s3L5QvHNpJT4vk8QBARBgO/75YAweDUVWWOw16+g9r+EODFI7Mwg2fvzZfvCUpda5A1CUJnNz7G2lCbY+QQ8vQ/v58usffwu6vXjiMwS9pnnMA3bKsZwwxKFi5GyhO1h9EdWnz1AbXoB88O35FdXkH9Oo068gW7bQebWTepPfoIQ4uGASkqySsFP3xPzfLL371F48TDBK28S1wUYPkX+n0UKfUcjfWprJbIW58oIzrnPyTyWInfyU2p3dJHckKcxBnvqS3xr2eY4xbNhV4gAlFIRFTn/LsLpj0g3thCTLpn3B0k9vnO9JylVnmWJvxkQaRVKKdTyEvadI8zvf5lkeoEHBw+T7OyiUCiglCpKutqomEGpzMjnEJ5P/XfnWDj0KvGDfUgpqytsk1UtURGQqCX3zQWsMdRv/IC2GrwqwFqL+XAfevS/yKIGZFMT3p49qMlJ3N27Kdy+jWxuBtclf+NGGaCQSpUDtNbYxb/Qc9myA/7evXjd3bi7drF28SI1fX3gumTPn0evt+koYJNflKlho/1tMgtkL13CSSZxGhvR2SyO55Gfmam4X2/yXYCpqam1hSe3r/m/Lrj2b7CKInD52jWMUtggQLS1kb96FRsEaGMw8Th24xLh/ju53INSQNgX/Lq6uqeklMkKl3oky+fzd1dXV38L/f8B0Yx+OJwbYZAAAAAASUVORK5CYII=") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+.cajanormativa{
+	width:300px;-webkit-border-radius: 15px;-moz-border-radius: 15px;border-radius: 15px;background-color:#DEDEDE; text-align:center; padding: 5px; padding-bottom:15px; margin-bottom:10px;
+}
+
+

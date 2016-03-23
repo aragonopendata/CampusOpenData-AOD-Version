@@ -34,11 +34,11 @@ def index():
 	if request.args.get('filtroFormatos'):
 		filtroFormato				= url2pathname(request.args.get('filtroFormatos')).encode('utf-8')
 	#filtroPlataforma  = url2pathname(request.args.get('filtroPlataforma')	#No hay filtro, por ahora 2016/03/02
-	print 'El filtro de tipo es '+ str(filtroTipo)
-	print 'El filtro de etiquetas es '+ str(filtroEtiqueta)
-	print 'El filtro de ponentes es '+ str(filtroPonente)
-	print 'El filtro de eventos es '+ str(filtroNombreEvento)
-	print 'El filtro de formatos es '+ str(filtroFormato)
+#	print 'El filtro de tipo es '+ str(filtroTipo)
+#	print 'El filtro de etiquetas es '+ str(filtroEtiqueta)
+#	print 'El filtro de ponentes es '+ str(filtroPonente)
+#	print 'El filtro de eventos es '+ str(filtroNombreEvento)
+#	print 'El filtro de formatos es '+ str(filtroFormato)
 	#Obtenemos de la base de datos el array para realizar los comboboxes
 	cursor= conexionBBDD.cursor()
 	comboTipos			= BBDDCampusOpenData.todoLosTipos(cursor)
@@ -56,15 +56,23 @@ def index():
 	
 @app.route('/ver_contenido/<id>')
 def show_content(id):
-	conexionBBDD=configuracion.conexion()
-	cursor= conexionBBDD.cursor()
-	contenido = BBDDCampusOpenData.obtenContenidoPorID4Jinja(id, cursor)
-	cursor.close()
-	conexionBBDD.close()
-	if contenido:
-		return render_template('showContent.html', contenido=contenido)
-	else:
-		return render_template('error_document_template.html')
+	try:
+		ide=int(id)
+		conexionBBDD=configuracion.conexion()
+		cursor= conexionBBDD.cursor()
+		contenido = BBDDCampusOpenData.obtenContenidoPorID4Jinja(ide, cursor)
+		cursor.close()
+		conexionBBDD.close()
+		if contenido:
+			return render_template('showContent.html', contenido=contenido)
+		else:
+			return render_template('error_document_template.html', elerror='No hay contenido con id '+id)
+	except ValueError: #Si no es un número, pintamos la plantilla de error
+		return render_template('error_document_template.html', elerror='El id tiene que ser un n&uacute;mero')
 
 
+
+@app.errorhandler(404)
+def page_not_found(e):
+	return render_template('error_document_template.html', elerror='No existe p&aacute;gina')
 	

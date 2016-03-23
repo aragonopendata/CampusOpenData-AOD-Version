@@ -59,7 +59,7 @@ def insertaTema(tema, conexion):
 	cursor = conexion.cursor()
 	hay=hayTema(tema, cursor)
 	if (hay==0) or (hay==None):
-		consulta = "INSERT INTO tema (nombre) VALUES ('"+tema.strip()+"');"
+		consulta = "INSERT INTO tema (nombre) VALUES ('"+tema.strip().replace("'", "''")+"');"
 		cursor.execute(consulta)
 		conexion.commit()	
 		devolver = Tema(hayTema(tema, cursor), tema.strip())
@@ -160,7 +160,7 @@ def insertaPlataforma(plataforma, conexion):
 	cursor = conexion.cursor()
 	hay=hayPlataforma(plataforma, cursor)
 	if (hay==0) or (hay==None):
-		consulta = "INSERT INTO plataforma (nombre) VALUES ('"+plataforma.strip()+"');"
+		consulta = "INSERT INTO plataforma (nombre) VALUES ('"+plataforma.strip().replace("'", "''")+"');"
 		cursor.execute(consulta)
 		conexion.commit()	
 		devolver = Plataforma(hayPlataforma(plataforma, cursor), plataforma.strip())
@@ -248,7 +248,7 @@ def insertaTipo(tipo, conexion):
 	cursor = conexion.cursor()
 	hay=hayTipo(tipo, cursor)
 	if (hay==0) or (hay==None):
-		consulta = "INSERT INTO tipo (nombre) VALUES ('"+tipo.strip()+"');"
+		consulta = "INSERT INTO tipo (nombre) VALUES ('"+tipo.strip().replace("'", "''")+"');"
 		cursor.execute(consulta)
 		conexion.commit()	
 		devolver = Tipo(hayTipo(tipo, cursor), tipo.strip())
@@ -336,7 +336,7 @@ def insertaFormato(formato, conexion):
 	cursor = conexion.cursor()
 	hay=hayFormato(formato, cursor)
 	if (hay==0) or (hay==None):
-		consulta = "INSERT INTO formato (nombre) VALUES ('"+formato.strip()+"');"
+		consulta = "INSERT INTO formato (nombre) VALUES ('"+formato.strip().replace("'", "''")+"');"
 		cursor.execute(consulta)
 		conexion.commit()	
 		devolver = Formato(hayFormato(formato, cursor), formato.strip())
@@ -425,7 +425,7 @@ def insertaEvento(nombre, lugar, descripcion, fecha, conexion):
 	cursor = conexion.cursor()
 	hay=hayEvento(nombre, cursor, fecha)
 	if (hay==0) or (hay==None):
-		consulta = "INSERT INTO evento (nombre, lugar, descripcion, fecha) VALUES ('"+nombre.strip()+"', '"+lugar.strip()+"', '"+descripcion.strip()+"', '"+fecha.strip()+"');"
+		consulta = "INSERT INTO evento (nombre, lugar, descripcion, fecha) VALUES ('"+nombre.strip().replace("'", "''")+"', '"+lugar.strip().replace("'", "''")+"', '"+descripcion.strip().replace("'", "''")+"', '"+fecha.strip().replace("'", "''")+"');"
 		cursor.execute(consulta)
 		conexion.commit()	
 		devolver = Evento(nombre.strip(), lugar.strip(), descripcion.strip(), fecha.strip())
@@ -549,7 +549,7 @@ def insertaContenido(titulo, descripcion, idFormato, idTipo, idEvento, aparece, 
 	hay=hayContenido(url, cursor)
 	if (hay==0) or (hay==None):
 		if (obtenFormatoPorID(idFormato, cursor)!=0) and (obtenTipoPorID(idTipo, cursor)!=0) and (obtenEventoPorID(idEvento, cursor)>0) and (obtenPlataformaPorID(idPlataforma, cursor)!=0):
-			consulta="INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('"+titulo.strip()+", '"+descripcion.strip()+"', "+str(idFormato)+", "+str(idTipo)+", "+str(idEvento)+", '"+aparece.strip()+"', '"+url.strip()+"', "+str(idPlataforma)+", '"+thumbnail.strip()+"');"
+			consulta="INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('"+titulo.strip().replace("'", "''")+", '"+descripcion.strip().replace("'", "''")+"', "+str(idFormato)+", "+str(idTipo)+", "+str(idEvento)+", '"+aparece.strip()+"', '"+url.strip()+"', "+str(idPlataforma).replace("'", "''")+", '"+thumbnail.strip()+"');"
 			cursor.execute(consulta)
 			conexion.commit()
 			idContenido=hayContenido(titulo.strip(), cursor)
@@ -586,7 +586,7 @@ def insertaContenido(titulo, descripcion, nombreFormato, nombreTipo, nombreEvent
 		temas.append(tema)
 		arrayIdTemas.append(tema.nombre)
 	
-	consulta="INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('"+titulo.strip()+"', '"+descripcion.strip()+"', "+str(formato.id)+", "+str(tipo.id)+", "+str(evento.id)+", '"+aparece.strip()+"', '"+url.strip()+"', "+str(plataforma.id)+", '"+thumbnail.strip()+"');"
+	consulta="INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('"+titulo.strip().replace("'", "''")+"', '"+descripcion.strip().replace("'", "''")+"', "+str(formato.id)+", "+str(tipo.id)+", "+str(evento.id)+", '"+aparece.strip().replace("'", "''")+"', '"+url.strip().replace("'", "''")+"', "+str(plataforma.id)+", '"+thumbnail.strip().replace("'", "''")+"');"
 	print 'La consulta es '+consulta
 	cursor.execute(consulta)
 	conexion.commit()
@@ -639,38 +639,38 @@ def filtraContenido(cursor, filtroTipo=None, filtroEtiqueta=None, filtroPonente=
 	if (filtroTipo):
 		tablas = tablas + ", public.tipo"
 		if len(condicion)==0:
-			condicion = "tipo.id = contenido.tipo AND tipo.nombre = '"+str(filtroTipo).strip()+"'"
+			condicion = "tipo.id = contenido.tipo AND tipo.nombre = '"+str(filtroTipo).strip().replace("'", "''")+"'"
 		else:
-			condicion = condicion +" AND tipo.id = contenido.tipo AND tipo.nombre = '"+str(filtroTipo).strip()+"'"
+			condicion = condicion +" AND tipo.id = contenido.tipo AND tipo.nombre = '"+str(filtroTipo).strip().replace("'", "''")+"'"
 	if (filtroEtiqueta):
 		tablas = tablas + ", public.tema, public.contenido_tiene_tema"
 		if len(condicion)==0:
-			condicion = "tema.id = contenido_tiene_tema.tema AND contenido_tiene_tema.contenido = contenido.id AND tema.nombre = '"+str(filtroEtiqueta).strip()+"'"
+			condicion = "tema.id = contenido_tiene_tema.tema AND contenido_tiene_tema.contenido = contenido.id AND tema.nombre = '"+str(filtroEtiqueta).strip().replace("'", "''")+"'"
 		else:
 			condicion = condicion +" AND tema.id = contenido_tiene_tema.tema AND contenido_tiene_tema.contenido = contenido.id AND tema.nombre = '"+str(filtroEtiqueta).strip()+"'"
 	if (filtroPonente):
 		if len(condicion)==0:
-			condicion = "contenido.aparece = '"+str(filtroPonente).strip()+"'"
+			condicion = "contenido.aparece = '"+str(filtroPonente).strip().replace("'", "''")+"'"
 		else:
-			condicion = condicion +" AND contenido.aparece = '"+str(filtroPonente).strip()+"'"
+			condicion = condicion +" AND contenido.aparece = '"+str(filtroPonente).strip().replace("'", "''")+"'"
 	if (filtroNombreEvento):
 		tablas = tablas + ", public.evento"
 		if len(condicion)==0:
-			condicion = "evento.id = contenido.evento AND evento.nombre = '"+str(filtroNombreEvento).strip()+"'"
+			condicion = "evento.id = contenido.evento AND evento.nombre = '"+str(filtroNombreEvento).strip().replace("'", "''")+"'"
 		else:
-			condicion = condicion + " AND evento.id = contenido.evento AND evento.nombre = '"+str(filtroNombreEvento).strip().replace("'", "\''")+"'"
+			condicion = condicion + " AND evento.id = contenido.evento AND evento.nombre = '"+str(filtroNombreEvento).strip().replace("'", "''")+"'"
 	if (filtroFormato):
 		tablas = tablas + ", public.formato"
 		if len(condicion)==0:
-			condicion = "formato.id = contenido.formato AND formato.nombre = '"+str(filtroFormato).strip()+"'"
+			condicion = "formato.id = contenido.formato AND formato.nombre = '"+str(filtroFormato).strip().replace("'", "''")+"'"
 		else:
-			condicion = condicion + " AND formato.id = contenido.formato AND formato.nombre = '"+str(filtroFormato).strip()+"'"
+			condicion = condicion + " AND formato.id = contenido.formato AND formato.nombre = '"+str(filtroFormato).strip().replace("'", "''")+"'"
 	if (filtroPlataforma):
 		tablas = tablas + ", public.plataforma"
 		if len(filtroPlataforma)==0:
-			condicion = "plataforma.id = contenido.plataforma AND plataforma.nombre = '"+str(filtroPlataforma).strip()+"'"
+			condicion = "plataforma.id = contenido.plataforma AND plataforma.nombre = '"+str(filtroPlataforma).strip().replace("'", "''")+"'"
 		else:
-			condicion = condicion + " AND plataforma.id = contenido.plataforma AND plataforma.nombre = '"+str(filtroPlataforma).strip()+"'"
+			condicion = condicion + " AND plataforma.id = contenido.plataforma AND plataforma.nombre = '"+str(filtroPlataforma).strip().replace("'", "''")+"'"
 	consulta = "SELECT DISTINCT contenido.id " + tablas
 	if len(condicion)>0:
 		consulta = consulta +" WHERE "+ condicion
