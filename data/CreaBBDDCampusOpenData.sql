@@ -91,7 +91,8 @@ INSERT INTO evento (nombre, lugar, descripcion, fecha) VALUES ('Jornada "Un año
 INSERT INTO evento (nombre, lugar, descripcion, fecha) VALUES ('Open Data Global Leaders'' Network at the Open Data Institute', 'Londres', 'La Global Leaders'' Network del Open Data Institute pretende ser una red global que aglutine a las iniciativas de datos abiertos más destacadas del mundo. El Open Data Institute se ofrece como nodo central de relación de las mismas y como plataforma para conseguir el mayor impacto para las iniciativas de Open Data.', '2016/02/26');
 INSERT INTO evento (nombre, lugar, descripcion, fecha) VALUES ('El nuevo marco normativo de la transparencia y la participación ciudadana en Aragón', 'Zaragoza', 'Curso creado para formar a los empleados públicos del Gobierno de Aragón en los diferentes elementos jurídicos que conforman el marco normativo de transparencia y participación ciudadana en Aragón.', '2016/03/01');
 INSERT INTO evento (nombre, lugar, descripcion, fecha) VALUES ('Open Data Global Leaders'' Network at the Open Data Institute', 'Londres', 'Curso creado para formar a los empleados públicos del Gobierno de Aragón en los diferentes elementos jurídicos que conforman el marco normativo de transparencia y participación ciudadana en Aragón.', '2016/03/01');
-
+INSERT INTO evento (nombre, lugar, descripcion, fecha) VALUES ('Curso presentación Aragón Open Social Data para funcionarios, IAAP', 'Zaragoza', 'Curso para funcionarios de presentación de la herramienta Aragón Open Social Data. El curso se compone de una introducción al funcionamiento de las redes sociales, de la exposición de las técnicas de escucha empleadas por Aragón Open Data y la exposición de las funcionalidades desarrolladas en Aragón Open Social Data. ', '2016/03/10');
+INSERT INTO evento (nombre, lugar, descripcion, fecha) VALUES ('Presentación de Aragón Open Social Data en la Asociación de Periodistas de Aragón', 'Zaragoza', 'Jornada creada para la presentación de la herramienta Aragón Open Social Data a periodistas de Aragón. El evento se celebró dentro del marco ofrecido por la Asociación de Periodistas de Aragón como forma de atraer al mayor número de profesionales posibles a la presentación de esta herramienta que presenta una clara utilidad para los profesionales del periodísmo.', '2016/03/21');
 
 
 
@@ -169,6 +170,8 @@ INSERT INTO tema (nombre) VALUES ('UK');
 INSERT INTO tema (nombre) VALUES ('Visualizacion de datos');
 INSERT INTO tema (nombre) VALUES ('Zaragoza');
 INSERT INTO tema (nombre) VALUES ('Plataforma');
+INSERT INTO tema (nombre) VALUES ('Redes sociales');
+INSERT INTO tema (nombre) VALUES ('IAAP');
 
 
 --Creamos la tabla de las formato
@@ -398,9 +401,10 @@ INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url
 INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('Aragón Open Data initiative at the Open Data Global Leaders'' Network of the Open Data Institute', 'Exposición del recorrido de la iniciativa Aragón Open Data desde su creación como catálogo de conjunto de datos, pasando por su posterior etapa como prestador servicios y su enfoque como futura plataforma global del Gobierno de Aragón', 3, 6 , 29, 'José Mª Subero', 'http://www.slideshare.net/slideshow/embed_code/58896889', 5, 'http://cdn.slidesharecdn.com/ss_thumbnails/odipresentation-160301075533-thumbnail.jpg?cb=1456818989');
 INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('Aragón Open Data', 'Ponencia ofrecida en los cursos formativos ofrecidos a los empleados del Gobierno de Aragón, dentro de unas jornadas sobre transparencia y participación pública. Descripción de las principales tareas, objetivos y servicios de Aragón Open Data', 3, 6 , 30, 'José Mª Subero', 'http://www.slideshare.net/slideshow/embed_code/59199824', 5, 'http://cdn.slidesharecdn.com/ss_thumbnails/marconormativotransparenciaopendata-160307135909-thumbnail.jpg?cb=1457359423');
 INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('Aragón Open Data initiative at the Open Data Global Leaders'' Network of the Open Data Institute', 'Exposición del recorrido de la iniciativa Aragón Open Data desde su creación como catálogo de conjunto de datos, pasando por su posterior etapa como prestador servicios y su enfoque como futura plataforma global del Gobierno de Aragón', 4, 6 , 29, 'José Mª Subero', 'http://www.youtube.com/embed/REWTxpIXZSM', 7, 'http://img.youtube.com/vi/REWTxpIXZSM/1.jpg');
-
-
-
+INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('Introducción a las redes sociales', 'Ponencia introductoria a la importancia de las redes sociales en el contexto actual. Descripción de las principales redes sociales existentes y de su relación con la evolución de la sociedad actual.', 3, 6 , 32, 'Alfredo Ferrer', 'http://www.slideshare.net/slideshow/embed_code/60116695', 5, 'http://cdn.slidesharecdn.com/ss_thumbnails/dgaalfredo-160328135157-thumbnail-3.jpg?cb=1459173192');
+INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('Obtención de datos de redes sociales', 'Descripción de las técnicas empleadas por Aragón Open Data para captar la información que se está generando en diferentes redes sociales. La información es almacenada y procesada dentro del proyecto Aragón Open Social Data y ofrecida como servicio para su uso por terceros. ', 3, 6 , 32, 'Gonzalo Ruiz', 'http://www.slideshare.net/slideshow/embed_code/60116800', 5, 'http://cdn.slidesharecdn.com/ss_thumbnails/dgagonzalo-160328135427-thumbnail-3.jpg?cb=1459173355');
+INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('Técnicas de análisis de datos de redes sociales', 'Exposición de las técnicas utilizadas para obtener conocimiento a través de los datos captados por Aragón Open Social Data de las redes sociales. Se muestran las herramientas de panel de mandos desarrolladas y su funcionamiento a través de casos reales de uso de explotación de datos de redes sociales.', 3, 6 , 32, 'Alberto Alcolea', 'http://www.slideshare.net/slideshow/embed_code/60116929', 5, 'http://cdn.slidesharecdn.com/ss_thumbnails/dgaalberto-160328135737-thumbnail-3.jpg?cb=1459173777');
+INSERT INTO contenido (titulo, descripcion, formato, tipo , evento, aparece, url, plataforma, thumbnail) VALUES ('Aragón Open Social Data. Técnicas de análisis de datos de redes sociales', 'Descripción de la forma en la que Aragón Open Social Data captura y muestra la información proveniente de redes sociales. Exposición de las funcionalidades que Aragón Open Social Data posee y explicación de la tecnología que hay detrás de la aplicación.', 3, 6 , 33, 'Alberto Alcolea', 'http://www.slideshare.net/slideshow/embed_code/60116490', 5, 'http://cdn.slidesharecdn.com/ss_thumbnails/socialdataapa-160328134705-thumbnail-3.jpg?cb=1459172916');
 
 --Creamos la tabla de las contenido
 CREATE TABLE contenido_tiene_tema (
@@ -699,4 +703,17 @@ INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (123, 33);
 INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (123, 38);
 INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (123, 44);
 INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (123, 51);
-
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (124, 52);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (124, 46);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (124, 53);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (125, 52);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (125, 46);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (125, 53);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (125, 1);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (125, 42);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (126, 52);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (126, 46);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (126, 53);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (127, 46);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (127, 44);
+INSERT INTO contenido_tiene_tema (contenido, tema) VALUES (127, 2);

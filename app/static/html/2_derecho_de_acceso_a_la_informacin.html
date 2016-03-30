@@ -1,6 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<!--Estilos del campus-->
+<link rel="stylesheet" href="http://opendata.aragon.es/public/themes/aod/style.css" media="screen" type="text/css" />
+<!--FinEstilos del campus-->
 <link rel="stylesheet" type="text/css" href="base.css" />
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
@@ -15,6 +18,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<header>
+	<div id="cabeceraRelacionados">
+		<ul>
+			<li class="clear visible-xs tamCero"></li>
+			<li><a href="http://transparencia.aragon.es" title="Transparencia" target="_blank">TRANSPARENCIA</a></li>
+			<li><a href="http://aragonparticipa.aragon.es" title="Participaci&oacute;n ciudadana" target="_blank">PARTICIPACI&Oacute;N CIUDADANA</a></li>
+			<li class="active"><a href="http://opendata.aragon.es" title="Open data">OPEN DATA</a><p class="clear visible-xs"></p></li>
+		</ul>
+	</div>
+	<div id="cabecera">
+		<ul>
+			<li><img src="http://opendata.aragon.es/public/i/logo_aragob.png" width="127" height="28" alt="Gobierno de Arag&oacute;n" title="Gobierno de Arag&oacute;n" /></li>
+		</ul>
+	</div>
+	<div class="banner">
+		<div class="bannerInline bannerLogo" style="text-align: right;" >
+			<a href="http://opendata.aragon.es/" title="ARAGÓN OPEN DATA"><img class=""	id="idTotal" src="http://opendata.aragon.es/public/i/logo_aod.png" alt="ARAGÓN OPEN DATA"></a>
+		</div>
+		<div class="bannerInline bannerBuscador" style="text-align: left; margin-top:0.5%;">
+				<form id="cajaBusqBanner" action="http://opendata.aragon.es/catalogo" method="get">
+					<input id="cajaDeBusqInput" name="q" value="" class="search anchoSearchBanner cajaDeBusqInput" type="text">
+								<button class="btn-search" type="submit">Buscar</button>
+								<a href="http://opendata.aragon.es/user/login" title="Log in">
+									<img src="http://opendata.aragon.es/public/i/login.jpg" alt="Log in" class="btn-login">
+								</a>
+				</form>
+		</div>
+	</div>
+	<div class="clear"></div>
+</header>
+<nav>
+	<div id="navegacion" class="botones botonesSuperiorLista">
+		<ul>
+			<li onmousedown="javascript:this.className='botonSuperiorClicked first';" onmouseup="javascript:this.className='botonSuperior first';"
+						onmouseover="javascript:this.className='botonSuperiorOver first';" onmouseout="javascript:this.className='botonSuperior first';"
+						onclick="javascript:window.location='http://opendata.aragon.es/catalogo';" class="botonSuperior first" title="Datos"><img src="http://opendata.aragon.es/public/i/header/datos.png" alt="Datos" title="Datos"></li>
+			<li onmousedown="javascript:this.className='botonSuperiorClicked second';" onmouseup="javascript:this.className='botonSuperior second';"
+						onmouseover="javascript:this.className='botonSuperiorOver second';" onmouseout="javascript:this.className='botonSuperior second';"
+						onclick="javascript:window.location='http://opendata.aragon.es/aragopedia';" class="botonSuperior second" title="AragoPedia"><img src="http://opendata.aragon.es/public/i/header/aragopedia.png" alt="AragoPedia" title="AragoPedia"></li>
+			<li class="clear visible-xs tamCero"></li>
+			<li onmousedown="javascript:this.className='botonSuperiorClicked third';" onmouseup="javascript:this.className='botonSuperior third';"
+						onmouseover="javascript:this.className='botonSuperiorOver third';" onmouseout="javascript:this.className='botonSuperior third';"
+							onclick="javascript:window.location='http://opendata.aragon.es/portal/social-data';" class="botonSuperior third" title="Social Data"><img src="http://opendata.aragon.es/public/i/header/socialData.png" alt="Social Data" title="Social Data"></li>
+	<li class="clear visible-ms tamCero"></li>
+				<li onmousedown="javascript:this.className='botonSuperiorClicked fourth';" onmouseup="javascript:this.className='botonSuperior fourth';"
+							onmouseover="javascript:this.className='botonSuperiorOver fourth';" onmouseout="javascript:this.className='botonSuperior fourth';"
+							onclick="javascript:window.location='http://opendata.aragon.es/portal/colabora';" class="botonSuperior fourth" title="Colabora"><img src="http://opendata.aragon.es/public/i/header/colabora.png" alt="Colabora" title="Colabora"></li>
+			<li class="clear visible-xs tamCero"></li>
+			<li onmousedown="javascript:this.className='botonSuperiorClicked fifth';" onmouseup="javascript:this.className='botonSuperior fifth';"
+						onmouseover="javascript:this.className='botonSuperiorOver fifth';" onmouseout="javascript:this.className='botonSuperior fifth';" 
+						onclick="javascript:window.location='http://opendata.aragon.es/portal/aplicaciones';" class="botonSuperior fifth" title="Aplicaciones"><img src="http://opendata.aragon.es/public/i/header/aplicaciones.png" alt="Aplicaciones" title="Aplicaciones"></li>
+			<li onmousedown="javascript:this.className='botonSuperiorClicked last';" onmouseup="javascript:this.className='botonSuperior last';"
+						onmouseover="javascript:this.className='botonSuperiorOver last';" onmouseout="javascript:this.className='botonSuperior last';" 
+						onclick="javascript:window.location='http://opendata.aragon.es/portal/open-data';" class="botonSuperior last" title="Informaci&oacute;n sobre Open Data"><img src="http://opendata.aragon.es/public/i/header/infoOpenData.png" alt="Informaci&oacute;n sobre Open Data" title="Informaci&oacute;n sobre Open Data"></li>
+			</ul>
+	</div>
+</nav>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
 <div id="emptyHeader"></div>
@@ -260,5 +320,100 @@
 <a href="1_publicidad_activa.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="3_proteccin_o_garantas_del_derecho_al_acceso_a_la_informacin.html" class="next"> Siguiente<span> &raquo;</span></a>
 </div>
 </div>
+</div><footer>
+<div id="pie">
+<ul id="pieUL"><li id="pieULLI">
+<div class="pieInterior">
+	<div class="pieZonaUno">
+		<a title="Home Arag&oacute;n Open Data" href="http://opendata.aragon.es/"><img src="http://opendata.aragon.es/public/i/footer/textoAOD.png" alt="Arag&oacute;n Open Data" id="pieZonaUnoRoot"/> </a>
+<img alt="Flecha" src="http://opendata.aragon.es/public/i/footer/flechaFooter.png"> 
+<a class="footerLink pieEnlace" title="Home Arag&oacute;n Open Data" href="http://opendata.aragon.es/"> HOME</a>
+	</div>
+	<div class="clear"></div>
+	<div class="pieZonaDos">
+		<ul>
+		<li>
+		<table>
+			<tr><td class="titulo"><img height="9"  src="http://opendata.aragon.es/public/i/footer/textoAvisoLegal.png" alt="Aviso legal"/></td></tr>
+			<tr><td><a href="http://opendata.aragon.es/terminos" title="T&eacute;rminos de uso"><img src="http://opendata.aragon.es/public/i/footer/cajaTerminosUso.jpg" alt="T&eacute;rminos de uso"/></a></td></tr>
+			<tr><td><img src="http://opendata.aragon.es/public/i/footer/cajaCCconTexto.jpg" alt="Licencia Creative Commons" height="96" width="215"/></td></tr>
+			<tr><td><img src="http://opendata.aragon.es/public/i/footer/banderaUEconTexto.png" alt="Uni&oacute;n Europea - Fondo Europeo de Desarrollo Regional" class="recuadroPie" /></td></tr>
+		</table>
+		</li>
+<li class="clear visible-xs tamCero"></li>
+		<li>
+		<table>
+			<tr><td class="titulo"><img height="9" src="http://opendata.aragon.es/public/i/footer/textoPoweredBy.png" alt="Powered by"/></td></tr>
+			<tr><td><a href="http://ckan.org/" title="CKAN"><img src="http://opendata.aragon.es/public/i/footer/cajaLogoCKAN.jpg" alt="CKAN"/></a></td></tr>
+			<tr><td><a href="http://www.wolfcms.org/" title="Wolf CMS"><img src="http://opendata.aragon.es/public/i/footer/cajaLogoWolfCMS.jpg" alt="Wolf CMS"/></a></td></tr>
+			<tr><td><a href="http://www.mediawiki.org/" title="MediaWiki"><img src="http://opendata.aragon.es/public/i/footer/cajaLogoMediaWiki.jpg" alt="MediaWiki"/></a></td></tr>
+			<tr><td><a href="http://virtuoso.openlinksw.com/" title="Virtuoso"><img src="http://opendata.aragon.es/public/i/footer/cajaLogoVirtuoso.jpg" alt="Virtuoso"/></a></td></tr>
+		</table>
+		</li>
+<li class="clear visible-xs tamCero"></li>
+<li class="clear visible-ms tamCero"></li>
+		<li>
+		<table>
+			<tr><td class="titulo"><img src="http://opendata.aragon.es/public/i/footer/textoAOD.png" alt="Arag&oacute;n Open Data"/></td></tr>
+			<tr><td>
+<div class="pieZonaEnlaces">
+<ul class="styleDiscUL">
+<li><a href="http://opendata.aragon.es/catalogo" title="Datos" class="pieEnlace">DATOS</a></li>
+<li><a href="http://opendata.aragon.es/aragopedia" title="AragoPedia" class="pieEnlace">ARAGOPEDIA</a></li>
+<li><a href="http://opendata.aragon.es/portal/social-data" title="Social Data" class="pieEnlace">SOCIAL DATA</a></li>
+<li><a href="http://opendata.aragon.es/portal/colabora" title="Colabora" class="pieEnlace">COLABORA</a></li>
+<li><a href="http://opendata.aragon.es/portal/aplicaciones" title="Aplicaciones" class="pieEnlace">APLICACIONES</a></li>
+<li><a href="http://opendata.aragon.es/portal/open-data" title="Informaci&oacute;n Open Data" class="pieEnlace">INFO OPEN DATA</a></li>
+</ul>
 </div>
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este curso tiene licencia <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<script type="text/javascript" src="my_js.js"></script></body></html>
+</td></tr>
+		</table>
+		</li>
+<li class="clear visible-xs tamCero"></li>
+		<li>
+		<table class="last">
+			<tr><td class="titulo"><img height="9"  src="http://opendata.aragon.es/public/i/footer/textoRedesSociales.png" alt="Redes Sociales"/></td></tr>
+			<tr><td><a href="http://www.facebook.com/observatorio.aragones" title="Facebook"><img src="http://opendata.aragon.es/public/i/footer/cajaLogoFacebook.jpg" alt="Facebook"/></a></td></tr>
+			<tr><td><a href="http://www.twitter.com/oasi" title="Twitter"><img src="http://opendata.aragon.es/public/i/footer/cajaLogoTwitter.jpg" alt="Twitter"/></a></td></tr>
+			<tr><td><a href="http://www.youtube.com/watch?v=8d409yteTJM&list=PLQ3k0vA0UZvhBVOz_mCq-9Wyn3VCB6QCe" title="YouTube"><img src="http://opendata.aragon.es/public/i/footer/cajaLogoYouTube.jpg" alt="YouTube"/></a></td></tr>
+			<tr><td><a href="mailto:opendata@aragon.es" title="Contacto AOD"><img src="http://opendata.aragon.es/public/i/footer/cajaCorreoAOD.jpg" alt="Contacto AOD"/></a></td></tr>
+		</table>
+		</li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<div class="pieZonaTres">
+		<ul>
+			<li class="izquierda textoPie">
+				<p>GOBIERNO DE ARAG&Oacute;N</p>
+				<p>EDIFICIO PIGNATELLI</p>
+				<address>PASEO MAR&iacute;A AGUST&iacute;N, 36 50071 ZARAGOZA TEL. 976 714 000</address>
+			</li>
+			<li class="derecha">
+				<a target="_blank" href="http://www.aragon.es" title="Gobierno de Arag&oacute;n"><img width="132" height="28" alt="Gobierno de Arag&oacute;n" src="http://opendata.aragon.es/public/i/footer/logo_aragob_pie.png"></a>
+			</li>
+		</ul>
+	</div>
+<div class="clear"></div>
+</div>
+</li></ul>
+</div>
+</footer>
+
+<script type="text/javascript" src="my_js.js"></script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-36118896-2']);
+	_gaq.push(['_setDomainName', 'aragon.es']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https:/'+'/' : 'http:/'+'/') + 'stats.g.doubleclick.net/dc.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="../js/responsive.js"></script>
+</body></html>
