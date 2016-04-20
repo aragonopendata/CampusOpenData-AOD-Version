@@ -34,6 +34,10 @@ Instalamos Flask y sus necesidades. También psycopg2 para manejar la base de da
 Si tenemos internet
 campusOpenData/bin/pip install Flask
 campusOpenData/bin/pip install psycopg2
+campusOpenData/bin/pip install Flask-WTF
+campusOpenData/bin/pip install WTForms
+campusOpenData/bin/pip install Flask-HTTPAuth //Mirarlo
+
 
 
 Si no tenemos internet
@@ -45,6 +49,8 @@ campusOpenData/bin/pip install requisites/Jinja2-2.8.tar.gz
 campusOpenData/bin/pip install requisites/wsgiref-0.1.2.zip
 campusOpenData/bin/pip install requisites/Flask-0.10.1.tar.gz
 campusOpenData/bin/pip install requisites/psycopg2-2.6.1.tar.gz
+campusOpenData/bin/pip install requisites/WTForms-2.1.zip
+campusOpenData/bin/pip install requisites/Flask-WTF-0.12.tar.gz
 
 
 --------------------------------------------------------------------------------

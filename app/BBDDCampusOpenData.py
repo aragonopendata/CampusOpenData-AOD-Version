@@ -8,7 +8,7 @@ from models import *
 
 #Método que devuelve El string en el que modificamos los caracteres "raros" por (pseudo)etiquetas de HTML
 def meteEtiquetaHTML(frase_cambiar):
-	devolver =frase_cambiar.replace('á', '&aacute;').replace('é', '&eacute;').replace('í', '&iacute;').replace('ó', '&oacute;').replace('ú', '&uacute;').replace('Á', '&Aacute;').replace('É', '&Eacute;').replace('Í', '&Iacute;').replace('Ó', '&Oacute;').replace('Ú', '&Uacute;').replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;').replace('¿', '&iquest;').replace('¡', '&iexcl;').replace('Ñ', '&Ntilde;').replace('ñ', '&ntilde;').replace('º', '&ordm;').replace('ª', '&ordf;')
+	devolver =frase_cambiar.replace('á', '&aacute;').replace('é', '&eacute;').replace('í', '&iacute;').replace('ó', '&oacute;').replace('ú', '&uacute;').replace('Á', '&Aacute;').replace('É', '&Eacute;').replace('Í', '&Iacute;').replace('Ó', '&Oacute;').replace('Ú', '&Uacute;').replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;').replace('¿', '&iquest;').replace('¡', '&iexcl;').replace('Ñ', '&Ntilde;').replace('ñ', '&ntilde;').replace('º', '&ordm;').replace('ª', '&ordf;').replace('#', '&almohadilla;')
 	return devolver
 
 
@@ -193,6 +193,7 @@ def todaLasPlataformas(cursor):
 	if resultados is not None:
 			for resultado in resultados:
 				devolver.append(meteEtiquetaHTML(resultado[1]))
+#				devolver.append(resultado[1])
 	return devolver
 
 
@@ -281,6 +282,7 @@ def todoLosTipos(cursor):
 	if resultados is not None:
 			for resultado in resultados:
 				devolver.append(meteEtiquetaHTML(resultado[0]))
+#				devolver.append(resultado[0])
 	return devolver
 
 
@@ -369,6 +371,7 @@ def todoLosFormatos(cursor):
 	if resultados is not None:
 			for resultado in resultados:
 				devolver.append(meteEtiquetaHTML(resultado[1]))
+#				devolver.append(resultado[1])
 	return devolver
 
 
@@ -458,6 +461,7 @@ def todoLosEventos(cursor):
 	if resultados is not None:
 			for resultado in resultados:
 				devolver.append(meteEtiquetaHTML(resultado[0]))
+#				devolver.append(resultado[0])
 	return devolver
 
 
@@ -628,6 +632,7 @@ def todoLosPonentes(cursor):
 	if resultados is not None:
 		for resultado in resultados:
 			devolver.append(meteEtiquetaHTML(resultado[0]))
+#			devolver.append(resultado[0])
 	return devolver
 
 #Método que sirve para filtrar los contenidos dado los datos

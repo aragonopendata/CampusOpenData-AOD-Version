@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="muestraIndice">
+	<h1>CAMPUS OPEN DATA</h1>
+	
+	<title>jQuery UI Datepicker - Animations</title>
+	
+	
+	<div class="indexTexto">{{title}}</div>
+	<form action="" method="post" name="prueba">{{ form.hidden_tag() }}
+		<p>
+			{{form.nombre.label}}: {{ form.nombre(size=20, placeholder='enter something here', class='hola') }}
+			{% for error in form.nombre.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}<br>
+		</p>
+		<p>
+			Descripción: {{ form.descripcion }}
+		</p>
+	 	<p>
+			fecha: {{ form.fecha }}
+		</p>
+		
+		{{form.url.label}}: {{ form.url(size=40, placeholder='Introduzca una url', class='textFormulario') }}<br>
+			{% for error in form.url.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}<br>
+			PROBAMOAS A PARTIR DE AKI<br>
+			
+			{{form.titulo.label}}: {{ form.titulo(size=40, placeholder='Introduzca el título del contenido', class='textFormulario') }}<br>
+			
+			<div id="div_0">
+				<table class="textFormulario" id="temas-[]">
+					<tbody>
+						<tr>
+							<th>
+								<label for="temas-[]-tema">Tema</label>
+							</th>
+							<td>
+								<input id="temas-[]-csrf_token" name="temas-[]-csrf_token" type="hidden" value="1459500284##c1e2b8e1112c0a5998f6ccda9698b944b0b3d42a">
+								<input id="temas-[]-tema" name="temas-[]-tema" type="text" value="">
+								<input class="bt_plus" id="0" type="button" value="+" /><div class="error_form">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+		<p><input type="submit" value="Aceptar" /></p>
+	</form>
+	
+</div>
+<div class="huecoInicioPagina"></div>
+
+
+{% endblock %}

@@ -101,13 +101,13 @@ function contenidoOver(){
 			var id = $(this).attr('id');
 			//$('#'+id+' .front').addClass("oculto");
 			$('#'+id+' .back').removeClass("oculto");
-			console.log('Se entra en '+id);
+//			console.log('Se entra en '+id);
 		}, 
 		function(){
 			var id = $(this).attr('id');
 			//$('#'+id+' .front').removeClass("oculto");
 			$('#'+id+' .back').addClass("oculto");
-			console.log('Se sale de '+id);
+//			console.log('Se sale de '+id);
 		}
 	);
 }
@@ -140,11 +140,11 @@ $(document).ready(function() {
 	}
 	
 	//Blanco
-	$("#filtroTipo").chosen(config).change(fOnChgChosen);
+	$("#filtroTipo").chosen(config).chosenImage().change(fOnChgChosen);
 	//Azúl
 //	$("#filtroTipo").chosen(config).chosenImage().change(fOnChgChosen);
-	$("#filtroEtiquetas").chosen(config).change(fOnChgChosen);
-	$("#filtroPonentes").chosen(config).change(fOnChgChosen);
-	$("#filtroEventos").chosen(config).change(fOnChgChosen);
-	$("#filtroFormatos").chosen(config).change(fOnChgChosen);
+	$("#filtroEtiquetas").chosen(config).chosenImage().change(fOnChgChosen);
+	$("#filtroPonentes").chosen(config).chosenImage().change(fOnChgChosen);
+	$("#filtroEventos").chosen(config).chosenImage().change(fOnChgChosen);
+	$("#filtroFormatos").chosen(config).chosenImage().change(fOnChgChosen);
 } );

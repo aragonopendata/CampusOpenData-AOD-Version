@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="muestraIndice">
+	<h1>CAMPUS OPEN DATA</h1>
+	
+	<title>{{title}}</title>
+		
+
+	
+	<div class="indexTexto">{{title}}</div>
+	<form action="" method="post" name="prueba">{{ form.hidden_tag() }}
+		
+	<fieldset>
+		<legend>Contenido</legend>
+			{{form.titulo.label}}: {{ form.titulo(size=40, placeholder='Introduzca el título del contenido', class='textFormulario') }}<br>
+			{% for error in form.titulo.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}<br>
+			
+			{{form.descripcion.label}}: {{ form.descripcion (rows='10', cols='30', class='textFormulario')}}<br>
+			
+			{{form.formato.label}}: {{form.formato( class='textFormulario')}}<br>
+			
+			{{form.tipo.label}}: {{form.tipo(class='textFormulario')}}<br>
+			
+			{{form.evento.label}}: {{form.evento(class='textFormulario')}}<br>
+			
+			{{form.ponente.label}}: {{ form.ponente(size=40, placeholder='Introduzca el nombre del ponente', class='textFormulario') }}<br>
+			{% for error in form.titulo.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}<br>
+			
+			{{form.url.label}}: {{ form.url(size=40, placeholder='Introduzca una url válida', class='textFormulario') }}<br>
+			{% for error in form.url.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}<br>
+			
+			{{form.plataforma.label}}: {{form.plataforma(class='textFormulario')}}<br>
+			
+			{{form.thumbnail.label}}: {{ form.thumbnail(size=40, placeholder='Introduzca una url válida', class='textFormulario') }}<br>
+			{% for error in form.thumbnail.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}<br>
+			{{form.temas.label}}<br>
+			{% for tema in form.temas %}
+				{{tema(class='textFormulario')}}<br>
+			{% endfor %}<br>
+			
+			
+	</fieldset>
+		
+		
+		
+	 	<p>
+			fecha: {{ form.fecha }}
+		</p>
+		<p><input type="submit" value="Aceptar" /></p>
+	</form>
+	
+</div>
+<div class="huecoInicioPagina"></div>
+
+
+{% endblock %}

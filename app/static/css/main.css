@@ -13,8 +13,9 @@
 		font-family: aodFont;
 		font-style:  normal;
 		font-weight: normal;
-		src: url('../fonts/AODFont.otf');
+		src: url('../fonts/AODFont.ttf');
 	}
+	
 	
 	.oculto {
 		display: none;
@@ -61,26 +62,36 @@
 		max-width: 100%;
 	}
 	
+	
+	
 	.muestraIndice h1{
-/*		float: left;*/
-/*		width: 85%;*/
-		font-size: 36px;
+		font-size: 40px;
 		padding-top: 25px;
 		padding-bottom: 15px;
-		color: #3b515c;
 		font-family: 'aodFont', 'Roboto', Helvetica, Arial, sans-serif;
-		font-weight: 100
-		
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #76A1B8;
+		font-weight: 300;
 	}
 	
-	.muestraIndice h2{
+	.curso {
+		background-color: #76A1B8;
+		padding:30px;
+	}
+	
+	.curso:hover{
+		background-color: #3b515c;
+	}
+
+	.muestraIndice .curso .titulo{
 /*		float: left;*/
 /*		width: 85%;*/
+		text-align: center;
 		font-size: 36px;
-		padding-top: 22px;
-		padding-bottom: 22px;
-		color: #3b515c;
+		color: white;
 		font-family: 'aodFont', 'Roboto', Helvetica, Arial, sans-serif;
+		line-height: normal;
 	}
 	
 	
@@ -98,8 +109,7 @@
 		width: 300px;
 		height: 200px;
 		background-color: bisque;
-		margin-right: 23px;
-		margin-bottom: 15px;
+		margin-bottom: 30px;
 	}
 	
 	.muestraIndice .resultadosContenido .thumbnail {
@@ -111,7 +121,6 @@
 	
 	.muestraIndice .resultadosContenido .front  {
 		position: absolute;
-		width: 100%;
 		z-index:0;
 	}
 	
@@ -156,8 +165,8 @@
 		overflow: hidden;
 		border-bottom: 1px solid white;
 		clear: both;
-		padding-left:5px;
-		padding-right:5px;
+		padding-left:10px;
+		padding-right:10px;
 		font-weight: 100;
 	}
 	
@@ -165,14 +174,15 @@
 	
 	
 	.muestraIndice .resultadosContenido .fieldName{
+		font-family: 'aodTextos', 'Roboto';
 		color: white;
 		font-weight: bolder;
 		font-size: 14px;
-		padding-left:5px;
-		padding-right:5px;
+		padding-left:10px;
+		padding-right:10px;
 	}
 	
-	.muestraIndice .resultadosContenido .back .restoBack .recortado{
+	.muestraIndice .resultadosContenido .back .restoBack .fino{
 		
 		font-weight: 100;
 	}
@@ -196,7 +206,11 @@
 	.muestraIndice .resultadosContenido .back .restoBack .ponente, .muestraIndice .resultadosContenido .back .restoBack .fecha{
 		display: inline-flex;
 		text-align: right;
-/*		font-weight: 100;*/
+	}
+	
+	.evento{
+		padding-right:10px;
+		padding-left:10px;
 	}
 	
 	/*****************************************************************************
@@ -211,40 +225,44 @@
 	}
 	
 	.muestraContenido h1{
-/*		float: left;*/
-/*		width: 85%;*/
-		font-size: 36px;
+		font-size: 40px;
 		padding-top: 25px;
 		padding-bottom: 15px;
-		color: #3b515c;
 		font-family: 'aodFont', 'Roboto', Helvetica, Arial, sans-serif;
-		font-weight: 100;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #76A1B8;
+		font-weight: 300;
 	}
 	
 	.muestraContenido h2{
-/*		float: left;*/
-/*		width: 85%;*/
-		font-size: 22px;
+		font-size: 27px;
 		padding-top: 15px;
 		padding-bottom: 15px;
-		color: #3b515c;
 		font-family: 'aodFont', 'Roboto', Helvetica, Arial, sans-serif;
 		font-weight: 100;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #76A1B8;
 	}
 	
 	.muestraContenido .fieldName {
+		font-family: 'aodTextos', 'Roboto';
 		color: #76a1b8;
 		text-transform: uppercase;
 /*		padding-left: 15px;*/
 		padding-right: 15px;
 		padding-top: 15px;
 		font-weight: bold;
+		font-size:14px;
 	}
 	
 	.muestraContenido .fieldValue {
 /*		padding-left: 15px;*/
-		padding-right: 15px;
+		font-family: 'aodTextos', 'Roboto';
 		overflow: auto;
+		font-size:14px;
+		text-align: justify;
 	}
 	
 	.muestraContenido .recuadroRedondeado {
@@ -261,6 +279,69 @@
 		color: #fff !important;
 		text-decoration: none !important;
 		font-weight: bold;
+		font-family: 'aodFont', 'Roboto';
+	}
+	
+	.fieldValue a{
+		font-family: 'aodFont', 'Roboto';
+	}
+	
+	.fieldValue a:hover{
+		font-family: 'aodFont', 'Roboto';
+		font-size:14px;
+		text-align: justify;
+	}
+	
+	/*****************************************************************************
+	Propiedades para el responsive
+	*****************************************************************************/
+	@media all and (max-width: 1024px) {
+		ul.content-list{
+			text-align:center;
+		}
+		
+		.muestraIndice .resultadosContenido li{
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		
+		.filterContent{
+			margin-left:15px;
+		}
+	}
+	
+	@media all and (max-width: 1024px) {
+		#filtroTipo, #filtroEtiquetas, #filtroPonentes, #filtroEventos, #filtroFormatos{
+			width:95%;
+			margin-bottom: 15px;
+		}
+		
+		.chosen-container.chosen-container-single.chosen-container-single-nosearch.chosenImage-container{
+			width:95% !important;
+		}
+		
+		.chosen-container .chosen-results{
+			width:100% !important;
+		}
+		
+		.muestraIndice .filterContent .chosen-drop {
+			width:100% !important;
+		}
+		
+		
+	}
+	
+	.fieldValue a{
+		font-family: 'aodFont', 'Roboto';
+		font-size:14px;
+		text-align: justify;
+	}
+	
+	.fieldValue a:hover{
+		font-family: 'aodFont', 'Roboto';
+		font-size:14px;
+		text-align: justify;
+		color: black !important;
 	}
 	
 	
