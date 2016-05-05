@@ -16,7 +16,6 @@
 		src: url('../fonts/AODFont.ttf');
 	}
 	
-	
 	.oculto {
 		display: none;
 		visibility: hidden;
@@ -62,8 +61,6 @@
 		max-width: 100%;
 	}
 	
-	
-	
 	.muestraIndice h1{
 		font-size: 40px;
 		padding-top: 25px;
@@ -73,6 +70,7 @@
 		letter-spacing: 0.1em;
 		color: #76A1B8;
 		font-weight: 300;
+		
 	}
 	
 	.curso {
@@ -106,9 +104,8 @@
 	
 	.muestraIndice .resultadosContenido li {
 		display: inline-flex;
-		width: 300px;
+		width: 307px;
 		height: 200px;
-		background-color: bisque;
 		margin-bottom: 30px;
 	}
 	
@@ -126,14 +123,13 @@
 	
 	.muestraIndice .resultadosContenido .front .thumbnail-title {
 		position: absolute;
-		bottom: 7px;
+		bottom: 5px;
 /*		margin-left: 5px;*/
 		margin-right: 5px;
 		color:white;
 		width: 100%;
-		background-color: black;
-		opacity: 0.5;
-		width:300px;
+		background-color: #3B515C;
+		width:307px;
 	}
 	
 	.muestraIndice .resultadosContenido .front .thumbnail-title .recortado, .muestraIndice .resultadosContenido .back .restoBack .recortado{
@@ -144,12 +140,13 @@
 	}
 	
 	.muestraIndice .resultadosContenido .back{
-		background-color: black;
-		opacity: 0.8;
-		padding-top: 5px;
-		width:300px;
+		background-color: #76A1B8;
+		opacity: 0.9;
+		padding-top: 10px;
+		width:307px;
 		position: absolute;
 		z-index:1;
+		padding-bottom:5px;
 	}
 	
 	
@@ -166,7 +163,8 @@
 		border-bottom: 1px solid white;
 		clear: both;
 		padding-left:10px;
-		padding-right:10px;
+		padding-right:10px;		
+		padding-bottom:10px;
 		font-weight: 100;
 	}
 	
@@ -195,7 +193,7 @@
 	
 	
 	.muestraIndice .resultadosContenido .back .restoBack{
-		width:300px;
+		width:307px;
 		margin-top: 7px;
 		white-space: nowrap;
 		overflow: hidden;
@@ -209,8 +207,8 @@
 	}
 	
 	.evento{
-		padding-right:10px;
 		padding-left:10px;
+		padding-right:10px;
 	}
 	
 	/*****************************************************************************
@@ -219,13 +217,12 @@
 	.muestraContenido{
 		margin: auto;
 /*		width: 980px;*/
-		text-align: justify;
+		text-align: justify;	
 		max-width: 97%;
 		margin-left: 1em;
 	}
 	
 	.muestraContenido h1{
-		font-size: 40px;
 		padding-top: 25px;
 		padding-bottom: 15px;
 		font-family: 'aodFont', 'Roboto', Helvetica, Arial, sans-serif;
@@ -282,21 +279,15 @@
 		font-family: 'aodFont', 'Roboto';
 	}
 	
-	.fieldValue a{
-		font-family: 'aodFont', 'Roboto';
-	}
-	
-	.fieldValue a:hover{
-		font-family: 'aodFont', 'Roboto';
-		font-size:14px;
-		text-align: justify;
+	ul.content-list{
+		text-align:justify;
 	}
 	
 	/*****************************************************************************
 	Propiedades para el responsive
 	*****************************************************************************/
 	@media all and (max-width: 1024px) {
-		ul.content-list{
+		ul.content-list {
 			text-align:center;
 		}
 		
@@ -327,8 +318,6 @@
 		.muestraIndice .filterContent .chosen-drop {
 			width:100% !important;
 		}
-		
-		
 	}
 	
 	.fieldValue a{
@@ -343,7 +332,6 @@
 		text-align: justify;
 		color: black !important;
 	}
-	
 	
 	/*****************************************************************************
 	Properties para los errores
@@ -383,4 +371,69 @@
 	.bannerBuscadorError #cajaDeBusqInput {
 		max-width: 90% !important;
 	}
+	
+	
+	/****************************************************************************/
+ /*                               Campus Home                                */
+/****************************************************************************/
+
+	.thumbnail.enMedio.ultimo{
+		margin-left:25px;
+	}
+	
+	.solotres .thumbnail.enMedio{
+		margin-left:25px;
+	}
+	
+	.solotres .thumbnail.derecha{
+		margin-left:50px;
+	}
+/*	.thumbnail.enMedio.segundo{*/
+/*		margin-left:0px;*/
+/*	}*/
+/*	*/
+/*	.thumbnail.derecha{*/
+/*		margin-left:50px;*/
+/*	}*/
+
+	@media screen and (min-width:689px) and (max-width: 1024px)  {
+		.thumbnail{
+			margin-left:0px;
+			margin-right:0px;
+		}
+		
+		.solotres .thumbnail.enMedio{
+			margin-left:0px;
+		}
+	
+		.solotres .thumbnail.derecha{
+			margin-left: -171px;
+		}
+		
+		.thumbnail.enMedio.ultimo{
+			margin-left: 0px;
+		}
+		
+	}
+	
+	@media screen and (min-width:320px) and (max-width: 688px)  {
+		.thumbnail.enMedio.ultimo{
+			margin-left: 0px;
+		}
+		
+		.thumbnail{
+			margin-left:0px;
+			margin-right:0px;
+		}
+		
+		.solotres .thumbnail.enMedio{
+			margin-left:0px;
+		}
+	
+		.solotres .thumbnail.derecha{
+			margin-left: 0px;
+		}
+	}
+
+
 </style>

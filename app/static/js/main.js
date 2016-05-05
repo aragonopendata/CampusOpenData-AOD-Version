@@ -135,7 +135,7 @@ $(document).ready(function() {
 		var shallowDecoded = decodeURIComponent( shallowEncoded );
 		//Meterlo como parametro
 //		console.log('Los parámetros son:\n'+shallowEncoded+'\n'+shallowDecoded);
-		window.location = window.location.origin+'/?'+shallowDecoded;
+		window.location = window.location.origin+'/portal/campus/?'+shallowDecoded;
 		return false;
 	}
 	

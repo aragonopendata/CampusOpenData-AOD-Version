@@ -23,11 +23,11 @@
 }
 
 .chosenImage-container .chosen-single div b {
-	background: url("/static/img/flechaBlancaDown.png") no-repeat scroll 0 5px rgba(0, 0, 0, 0);
+	background: url("/portal/campus/static/img/flechaBlancaDown.png") no-repeat scroll 0 5px rgba(0, 0, 0, 0);
 }
 
 .chosenImage-container.chosen-container-active.chosen-with-drop .chosen-single div b {
-	background-image: url("/static/img/flechaBlancaUp.png");
+	background-image: url("/portal/campus/static/img/flechaBlancaUp.png");
 }
 
 .chosenImage-container.chosen-container .chosen-results li.highlighted {

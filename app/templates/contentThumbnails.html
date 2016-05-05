@@ -1,14 +1,21 @@
 <!--Plantilla que pinta los contenidos que se han encontrado según los filtros-->
 {% if contenidos|length > 0 %}
-	<ul class="content-list">
-		{% for contenido in contenidos %}
-			
-				<li>
+	{% set indexContenido = 0 %}
+	{% set numContenidos = contenidos|length %}
+	{% if contenidos|length ==3 %}
+		<ul class="content-list solotres">
+	{% else %}
+		<ul class="content-list">
+	{% endif %}
+	{% for contenido in contenidos %}
+		
+			<li>
 <!--					contentThumbnail-->
-					{% include 'contentThumbnail.html' %}
-				</li>
-			
-		{% endfor %}
+				{% include 'contentThumbnail.html' %}
+			</li>
+		{% set indexContenido = indexContenido+1 %}
+	{% endfor %}
+	
 	</ul>
 
 {% else %}

@@ -80,8 +80,17 @@ var myTheme = {
     }    
 }
 
+
+
 $(function(){
     if (document.body.className=='exe-web-site js') {
         myTheme.init();
     }
 });
+
+//$(document).ready(function() {
+//	var pathname = window.location.pathname;
+//	if (pathname.indexOf('/campus/static/html/')>-1)  {
+//		
+//	}
+//}

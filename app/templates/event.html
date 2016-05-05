@@ -9,8 +9,13 @@
 			Evento:
 		</div>
 		<div class="fieldValue">
-			<a  href="/?filtroEventos={{eventoNombre}}">{{eventoNombre}}</a>
+			<a  href="/portal/campus/?filtroEventos={{eventoNombre}}">{{eventoNombre}}</a>
 		</div>
+		{% if contenidoDescripcion %}
+			<div class="fieldValue">
+				{{contenidoDescripcion}}
+			</div>
+		{% endif %}
 	{% endif %}
 	{% if eventoFecha %}
 		<div class="fieldName">
@@ -29,12 +34,5 @@
 		</div>
 	{% endif %}
 	</div>
-	{% if contenidoDescripcion %}
-		<div class="fieldName">
-			Descripción:
-		</div>
-		<div class="fieldValue">
-			{{contenidoDescripcion}}
-		</div>
-	{% endif %}
+	
 </div>

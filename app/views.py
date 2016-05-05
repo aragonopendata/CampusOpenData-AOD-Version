@@ -91,7 +91,7 @@ def addContent():
 		return redirect('/')
 	return render_template('addContent.html', title='Formulario para meter contenido en el Campus Open Data', form=form)
 
-@app.route("/plataformas")
+@app.route("/api/plataformas")
 def plataformas():
 	conexionBBDD=configuracion.conexion()
 	cursor= conexionBBDD.cursor()
@@ -102,7 +102,7 @@ def plataformas():
 		devolver.append(pl)
 	return json.dumps(devolver)
 
-@app.route("/temas")
+@app.route("/api/temas")
 def temas():
 	conexionBBDD=configuracion.conexion()
 	cursor= conexionBBDD.cursor()
@@ -113,7 +113,7 @@ def temas():
 		devolver.append(pl)
 	return json.dumps(devolver)
 
-@app.route("/tipos")
+@app.route("/api/tipos")
 def tipos():
 	conexionBBDD=configuracion.conexion()
 	cursor= conexionBBDD.cursor()
@@ -124,7 +124,7 @@ def tipos():
 		devolver.append(pl)
 	return json.dumps(devolver)
 
-@app.route("/formatos")
+@app.route("/api/formatos")
 def formatos():
 	conexionBBDD=configuracion.conexion()
 	cursor= conexionBBDD.cursor()
@@ -136,7 +136,7 @@ def formatos():
 	return json.dumps(devolver)
 
 
-@app.route("/eventos")
+@app.route("/api/eventos")
 def eventos():
 	conexionBBDD=configuracion.conexion()
 	cursor= conexionBBDD.cursor()
@@ -148,7 +148,7 @@ def eventos():
 	return json.dumps(devolver)
 
 
-@app.route("/ponentes")
+@app.route("/api/ponentes")
 def ponentes():
 	conexionBBDD=configuracion.conexion()
 	cursor= conexionBBDD.cursor()
@@ -159,6 +159,11 @@ def ponentes():
 		devolver.append(pl)
 	return json.dumps(devolver)
 
+
+    
+
+	
+	
 @app.errorhandler(404)
 def page_not_found(e):
 	return render_template('error_document_template.html', elerror='No existe p&aacute;gina')

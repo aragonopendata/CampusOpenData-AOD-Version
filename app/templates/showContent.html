@@ -7,6 +7,13 @@
 	<div class="muestraContenido">
 		<h1>CAMPUS OPEN DATA</h1>
 		<h2>{{contenidoTitulo}}</h2>
+		{% if contenidoDescripcion %}
+			
+			<div class="fieldValue">
+				{{contenidoDescripcion}}
+			</div>
+
+		{% endif %}
 <!--		tags-->
 		{% include 'tags.html' %}
 		{% if ponente %}
@@ -14,20 +21,13 @@
 				Ponente:
 			</div>
 			<div class="fieldValue">
-				<a  href="/?filtroPonentes={{ponente}}">{{ponente}}</a>
+				<a  href="/portal/campus/?filtroPonentes={{ponente}}">{{ponente}}</a>
 			</div>
 		{% endif %}
 		<div style="padding-top:  15px;"></div>
 <!--		Iframe contenido-->
 		{% include 'contentIframe.html' %}
-		{% if contenidoDescripcion %}
-			<div class="fieldName">
-				Descripci&oacute;n:
-			</div>
-			<div class="fieldValue">
-				{{contenidoDescripcion}}
-			</div>
-		{% endif %}
+		
 <!--		evento-->
 		{% include 'event.html' %}
 
